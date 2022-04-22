@@ -1,10 +1,25 @@
+:root {
+    --dark-theme-background: #051622;
+    --dark-theme-primary: #1BA089;
+    --dark-theme-secondary: #DEB922;
+
+    --white: #0e0e0e;
+    --black: #efefef;
+
+    --primary: var(--black);
+    --background: var(--white);
+    --secondary: var(--dark-theme-secondary)
+
+}
 
 
 @media (prefers-color-scheme: dark) {
     :root   { 
-        
+        --primary: var(--dark-theme-primary);
+        --background: var(--dark-theme-background);
     }
 }
+
 
 
 *, *::before, *::after {
