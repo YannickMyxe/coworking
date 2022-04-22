@@ -2,9 +2,10 @@
     --dark-theme-background: #051622;
     --dark-theme-primary: #1BA089;
     --dark-theme-secondary: #DEB922;
+    --dark-theme-text: #efefef;
 
-    --white: #efefef;
-    --black: #0e0e0e;
+    --white: var(--dark-theme-text);
+    --black: var(--dark-theme-background);
 
     --primary: var(--black);
     --background: var(--white);
@@ -29,7 +30,12 @@ html {
     font-size: 62.5%;
 }
 
+main {
+    background-color: var(--background);
+}
+
+h1, h2, h3, h4,
 p {
-    color: var(--primary);
+    color: var(--dark-theme-text);
 }
 
