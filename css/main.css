@@ -40,3 +40,18 @@ p {
     color: var(--foreground);
 }
 
+
+main {
+    background-color: var(--primary);
+    padding: 1.5rem;
+}
+
+main>section {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+main .instructies {
+    
+}
+
