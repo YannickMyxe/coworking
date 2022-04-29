@@ -21,11 +21,18 @@
 
 }
 
+/*
+  Color themes
+*/
 
 [data-theme="dark"] {
   --foreground: var(--dark-theme-text);
   --background: var(--dark-theme-background);
 }
+
+/*
+  General
+*/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -66,10 +73,9 @@ a:hover {
 }
 
 /*
-    navbar
+    Navbar
 */
 header li, header a, header button {
-  font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 25px;
   color: var(--white);
@@ -79,7 +85,7 @@ header li, header a, header button {
 header {
   position: relative;
   padding: 30px 10%;
-  background-color: #474a50;
+  background-color: var(--nav-bg);
 }
 
 .flex {
@@ -100,7 +106,7 @@ header {
 .navbar .nav_links {
   margin-left: 0;
   list-style: none;
-  background-color: #474a50;
+  background-color: var(--nav-bg);
 }
 
 .nav_links li {
@@ -184,7 +190,6 @@ header img{
   transform: rotate(-45deg) translateY(-3px);
 }
 
-
 /*
     main
 */
@@ -202,7 +207,10 @@ main>section p + p {
     margin-top: 0.8rem;
 }
 
-/* body */
+/* 
+  Body 
+*/
+
 h1{
     color: var(--primary);
     size: 48px;
@@ -236,8 +244,9 @@ button:hover {
 
 
 /*    
-  navbar animations
+  Navbar animations
 */
+
 @keyframes showDown {
     0% {
         margin-top: -150%;
