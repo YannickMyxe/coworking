@@ -62,14 +62,11 @@ a {
 /*
     navbar
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
-
 header li, header a, header button {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 25px;
-  color: white;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -113,12 +110,12 @@ header {
 }
 
 .nav_links li a:hover {
-  color: #1BA089;
+  color: var(--primary);
 }
 
 header button {
   padding: 9px 25px;
-  background-color: #1BA089;
+  background-color: var(--primary);
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -129,12 +126,8 @@ header img{
     height: 100px;
 }
 
-header button:hover {
-  background-color: #24252a;
-}
-
 .nav_links a.active {
-  color: #1BA089;
+  color: var(--primary);
   text-decoration: underline;
   text-decoration-thickness: 4px;
   text-underline-offset: 5px;
@@ -145,7 +138,7 @@ header button:hover {
   gap: 1rem;
   background-color: inherit;
   border: 0;
-  color: #fff;
+  color: var(--white);
   align-items: center;
   font-size: 2rem;
   justify-content: space-between;
@@ -156,7 +149,7 @@ header button:hover {
   display: block;
   width: 1rem;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--white);
   margin: 2px 0;
   transition: transform .2s ease-in-out;
 }
@@ -205,7 +198,7 @@ main>section p + p {
 
 /* body */
 h1{
-    color: #1BA089;
+    color: var(--primary);
     size: 48px;
     text-align: center;
 }
@@ -220,9 +213,9 @@ div{
 }
 
 button {
-    color: #ffff;
+    color: var(--foreground);
     padding: 9px 25px;
-    background-color: #1BA089;
+    background-color: var(--primary);
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -231,9 +224,9 @@ button {
 }
 
 button:hover {
-    color: #1BA089;
-    background-color: #ffff;
-  }
+    color: var(--primary);
+    background-color: var(--foreground);
+}
 
 
 /*    
