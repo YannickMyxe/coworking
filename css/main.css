@@ -36,12 +36,17 @@ main {
     background-color: var(--background);
 }
 
+h1, h2, h3, h4 {
+    size: 120%;
+    margin-bottom: 0.5rem;
+}
+
 h1, h2, h3, h4,
 p {
     color: var(--foreground);
 }
 
-p {
+p, a {
     line-height: 1.75364rem;
 }
 
@@ -49,6 +54,10 @@ a {
     color: var(--primary);
     text-decoration: underline;
 }
+
+/*
+    main
+*/
 
 main {
     padding: 1.5rem;
@@ -59,3 +68,6 @@ main>section {
     margin: 0 auto;
 }
 
+main>section p + p {
+    margin-top: 0.8rem;
+}
