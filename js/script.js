@@ -6,9 +6,15 @@ function roll(){
     return Math.floor(Math.random()*6);
 }
 
-function diceroll(el){
-    console.log(el.id);
-    document.querySelector("#" + el.id).setAttribute("src", images[roll()]);
+function diceRoll(el){
+    let random = roll()
+    el.setAttribute("src", images[random]);
+    console.log(getValue(el.id))
 }
+
+function getValue(id){
+    return document.querySelector("#" +id).getAttribute("src").match(/\d+/)[0];
+}
+
 
 // alert("Dylan was here")
