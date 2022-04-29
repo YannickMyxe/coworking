@@ -25,6 +25,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 html {
@@ -40,14 +41,21 @@ p {
     color: var(--foreground);
 }
 
+p {
+    line-height: 1.75364rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: underline;
+}
 
 main {
-    background-color: var(--primary);
     padding: 1.5rem;
 }
 
 main>section {
-    max-width: 80%;
+    max-width: 70%;
     margin: 0 auto;
 }
 
