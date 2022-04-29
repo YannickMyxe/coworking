@@ -35,7 +35,11 @@ body {
     background-color: var(--background);
 }
 
-h1, h2, h3, h4,
+h1 {
+    color: #1BA089;
+}
+
+h2, h3, h4,
 p, label {
     color: var(--foreground);
 }
@@ -45,33 +49,65 @@ p, label {
     Form
 */
 .form {
-    width: 80%;
-    margin: 1rem auto;
-}
-
-.form form {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    margin: 1rem auto;
+    align-items: center;
 }
 
-input, textarea {
-    border-radius: 5px;
-    padding: 0.5rem;
-    margin: 0.5rem;
-}
-
-textarea {
-    max-width: 100%;
-    width: 100%;
-}
-
-input:not(:last-child), textarea {
+.form .input_comp {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 1rem;
 }
 
-input[type="submit"] {
-    background-color: var(--primary);
-    color: var(--foreground);
-    margin: 1rem 0;
-    border: 1px solid var(--white);
+.form .text_area {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+
+.form .input_comp .label {
+    color: #1BA089;
+    margin-bottom: .3rem;
+}
+
+.form .input_comp .input {
+    padding: .5rem;
+    border: none;
+    color: #909da5;
+}
+
+.form .text_area .label {
+    color: #1BA089;
+    margin-bottom: .3rem;
+}
+
+.form .text_area textarea {
+    border: none;
+    padding: .5rem;
+    max-width: 22rem;
+    min-width: 16rem;
+    max-height: 9rem;
+    min-height: 5rem;
+}
+
+.form input[type="submit"] {
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    background-color: #1BA089;
+    color: #efefef;
+    border: none;
+    border-radius: 50px;
+    padding: .5rem 1.8rem;
+    font-weight: 800;
+    font-size: 1.2rem;
+    transition: all .2s ease-in-out;
+}
+
+.form input[type="submit"]:hover {
+    background-color: #DEB922;
+    text-decoration: underline;
 }

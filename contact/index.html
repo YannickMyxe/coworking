@@ -26,12 +26,21 @@
     </header>
     <main>
         <section class="form">
-            <form action="">
-                <label for="name">Naam</label>
-                <input type="text" for="name" id="name">
-                <label for="message">Jouw bericht</label>
-                <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                <input type="submit" value="verzend">
+            <h1>Contact form</h1>
+            <form action="#">
+                <div class="input_comp">
+                    <label class="label" for="name">Name</label>
+                    <input type="text" placeholder="Type here your name" class="input">
+                </div>
+                <div class="input_comp">
+                    <label class="label" for="name">Email</label>
+                    <input type="text" placeholder="Type here your email" class="input">
+                </div>
+                <div class="text_area">
+                    <label class="label" for="name">Message</label>
+                    <textarea name="textarea" placeholder="Type here your message"></textarea>
+                </div>
+                <input type="submit" value="Send">
             </form>
         </section>
     </main>
