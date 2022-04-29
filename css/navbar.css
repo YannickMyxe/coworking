@@ -53,12 +53,12 @@ header {
 }
 
 .nav_links li a:hover {
-  color: #00f7ff;
+  color: #1BA089;
 }
 
 header button {
   padding: 9px 25px;
-  background-color: #00f7ff;
+  background-color: #1BA089;
   border: none;
   border-radius: 50px;
   cursor: pointer;
@@ -74,7 +74,7 @@ header button:hover {
 }
 
 .nav_links a.active {
-  color: #00f7ff;
+  color: #1BA089;
   text-decoration: underline;
   text-decoration-thickness: 4px;
   text-underline-offset: 5px;
