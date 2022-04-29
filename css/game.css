@@ -1,12 +1,5 @@
-div{
-    background-color: blue;
-    height: 750px;
-    width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-h1 {
+.titel {
+    color: #1BA089;
     text-align: center;
-    color: aliceblue;
-  }
+    margin-bottom: 3rem;
+}
