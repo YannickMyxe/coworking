@@ -10,13 +10,24 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <script defer src="../js/script.js"></script>
+    <script defer src="../js/darkmode.js"></script>
 </head>
 <body>
     <header>
-        <a href="/home/">
-            <img class="logo" src="/img/LOGO.png" alt="Logo">
-        </a>
-        <nav>
+        <div class="flex">
+            <a href="/home/">
+                <img class="logo" src="/img/LOGO.png" alt="Logo">
+            </a>
+            <button aria-expanded="false" class="hamburger" id="menu">
+                <span aria-hidden="true" class="icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span>Menu</span>
+            </button>
+        </div>
+        <button id="theme-switcher">Switch themes!</button>
+
+        <nav class="navbar">
             <ul class="nav_links">
                 <li><a class="active" href="/home/">Home</a></li>
                 <li><a href="/game/">Game</a></li>
@@ -26,9 +37,38 @@
     </header>
     <main>
         <section>
-            <h1>Home</h1>
-            <p>Hello world!</p>
-        </section>
+                <section class="instructies">
+                    <h1>Hoe speel je ludo?</h1>
+                    <a href="https://www.mastersofgames.com/rules/ludo-rules-instructions-guide.htm">Link naar spel instructies</a>
+                    <p>Welkom bij Ludo King, hier vind je de regels als je het spel nog nooit hebt gespeeld.</p>
+                    <div>
+                            <p>
+                                1. Het wordt gespeeld tussen 2 en 4 spelers, waarbij elke speler 4 tokens heeft. 
+                                De speler die als eerste al zijn vier fiches naar huis weet te krijgen (het midden van het bord bereikt),
+                                wordt tot winnaar uitgeroepen. Het spel gaat door totdat alle plaatsen zijn beslist.
+                            </p>
+                            <p>
+                                2. Een token kan alleen uit de basis komen en beginnen te bewegen nadat een zes door die speler is gegooid.
+                            </p>
+                            <p>
+                                3. Zodra een zes is uitgerold, krijgt die speler nog een beurt om de dobbelstenen te gooien.
+                                Als een speler drie keer achter elkaar zes gooit, slaat hij zijn beurt over.
+                                Als een toeken de finishlijn overschrijdt, mag de speler nog een dobbelsteen gooien.
+                            </p>
+                            <P>
+                                4. Als een token een ander token vangt, mag de speler die slaat nog een dobbelsteen gooien.
+                            </P>
+                            <p>
+                                5. Het bord heeft in totaal acht veilige vierkanten die gekleurde vierkanten en vierkanten met ster zijn.
+                            </p>
+                            <p>
+                                6. The tokens need to exit every player's base and move around the board to win.
+                            </p>
+                            <h2>Have Fun !</h2>
+                            <button href="/game/index.html">Spelen !</button>
+                    </div>
+                </section>
+            </section>
     </main>
 </body>
 </html>
