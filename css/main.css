@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 :root {
     --dark-theme-background: #051622;
     --dark-theme-primary: #1BA089;
@@ -10,7 +11,11 @@
     --foreground: var(--black);
     --background: var(--white);
     --primary: var(--dark-theme-primary);
-    --secondary: var(--dark-theme-secondary)
+    --secondary: var(--dark-theme-secondary);
+
+    --nav-blue: #00f7ff;
+    --nav-bg: #474a50;
+    --nav-hover: #24252a;
 
 }
 
