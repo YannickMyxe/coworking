@@ -16,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root   { 
-        --primary: var(--dark-theme-primary);
+        --foreground: var(--dark-theme-text);
         --background: var(--dark-theme-background);
     }
 }
@@ -25,14 +25,20 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Montserrat", sans-serif;
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 18px;
 }
 
 main {
     background-color: var(--background);
+}
+
+h1, h2, h3, h4 {
+    size: 120%;
+    margin-bottom: 0.5rem;
 }
 
 h1, h2, h3, h4,
@@ -40,3 +46,28 @@ p {
     color: var(--foreground);
 }
 
+p, a {
+    line-height: 1.75364rem;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+/*
+    main
+*/
+
+main {
+    padding: 1.5rem;
+}
+
+main>section {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+main>section p + p {
+    margin-top: 0.8rem;
+}
