@@ -16,7 +16,7 @@
 
 @media (prefers-color-scheme: dark) {
     :root   { 
-        --primary: var(--dark-theme-primary);
+        --foreground: var(--dark-theme-text);
         --background: var(--dark-theme-background);
     }
 }
@@ -28,15 +28,50 @@
 }
 
 html {
-    font-size: 62.5%;
+    font-size: 18px;
 }
 
-main {
+body {
     background-color: var(--background);
 }
 
 h1, h2, h3, h4,
-p {
+p, label {
     color: var(--foreground);
 }
 
+
+/*
+    Form
+*/
+.form {
+    width: 80%;
+    margin: 1rem auto;
+}
+
+.form form {
+    display: flex;
+    flex-direction: column;
+}
+
+input, textarea {
+    border-radius: 5px;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+
+textarea {
+    max-width: 100%;
+    width: 100%;
+}
+
+input:not(:last-child), textarea {
+    margin-bottom: 1rem;
+}
+
+input[type="submit"] {
+    background-color: var(--primary);
+    color: var(--foreground);
+    margin: 1rem 0;
+    border: 1px solid var(--white);
+}
