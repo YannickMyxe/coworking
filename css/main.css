@@ -59,6 +59,10 @@ a {
     text-decoration: underline;
 }
 
+a:hover {
+  color: var(--secondary);
+}
+
 /*
     navbar
 */
