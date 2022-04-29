@@ -78,7 +78,7 @@ main>section p + p {
 header li, header a, header button {
   font-weight: 500;
   font-size: 25px;
-  color: white;
+  color: var(--white);
   text-decoration: none;
 }
 
@@ -159,7 +159,7 @@ header button:hover {
   gap: 1rem;
   background-color: inherit;
   border: 0;
-  color: #fff;
+  color: var(--white);
   align-items: center;
   font-size: 2rem;
   justify-content: space-between;
@@ -170,7 +170,7 @@ header button:hover {
   display: block;
   width: 1rem;
   height: 2px;
-  background-color: #fff;
+  background-color: var(--white);
   margin: 2px 0;
   transition: transform .2s ease-in-out;
 }
