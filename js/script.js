@@ -9,12 +9,16 @@ function roll(){
 function diceRoll(el){
     let random = roll()
     el.setAttribute("src", images[random]);
-    console.log(getValue(el.id))
+    
 }
 
 function getValue(id){
-    return document.querySelector("#" +id).getAttribute("src").match(/\d+/)[0];
+    return document.querySelector("#dice-" +id).getAttribute("src").match(/\d+/)[0];
 }
+
+var canvas = document.getElementById("game-canvas");
+var context = canvas.getContext("2d");
+
 
 
 // alert("Dylan was here")
