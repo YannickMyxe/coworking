@@ -19,11 +19,10 @@
 
 }
 
-@media (prefers-color-scheme: dark) {
-    :root   { 
-        --foreground: var(--dark-theme-text);
-        --background: var(--dark-theme-background);
-    }
+
+[data-theme="dark"] {
+  --foreground: var(--dark-theme-text);
+  --background: var(--dark-theme-background);
 }
 
 *, *::before, *::after {
