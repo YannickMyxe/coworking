@@ -71,3 +71,36 @@ main>section {
 main>section p + p {
     margin-top: 0.8rem;
 }
+
+/* body */
+h1{
+    color: #1BA089;
+    size: 48px;
+    text-align: center;
+}
+
+h2{
+    color: #ffff;
+    text-align: center;
+    margin-top: 16px;
+}
+
+div{
+    text-align: center;
+}
+
+button {
+    color: #ffff;
+    padding: 9px 25px;
+    background-color: #1BA089;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-top: 16px;
+}
+
+button:hover {
+    color: #1BA089;
+    background-color: #ffff;
+  }
