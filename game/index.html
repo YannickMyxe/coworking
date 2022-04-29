@@ -9,14 +9,23 @@
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/game.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <script defer src="/js/script.js"></script>
 
 </head>
 <body>
     <header>
-        <a href="/home/">
-            <img class="logo" src="/img/LOGO.png" alt="Logo">
-        </a>
-        <nav>
+        <div class="flex">
+            <a href="/home/">
+                <img class="logo" src="/img/LOGO.png" alt="Logo">
+            </a>
+            <button aria-expanded="false" class="hamburger" id="menu">
+                <span aria-hidden="true" class="icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span>Menu</span>
+            </button>
+        </div>
+        <nav class="navbar">
             <ul class="nav_links">
                 <li><a href="/home/">Home</a></li>
                 <li><a class="active" href="/game/">Game</a></li>
@@ -25,7 +34,7 @@
         </nav>
     </header>
     <main>
-        <div>
+        <div class="game">
             <h1>This is the game</h1>
         </div>
     </main>
