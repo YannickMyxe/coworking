@@ -135,7 +135,7 @@ header {
 
 header button {
   padding: 9px 25px;
-  background-color: var(--nav-blue);
+  background-color: var(--dark-theme-background);
   border: none;
   border-radius: 50px;
   cursor: pointer;
