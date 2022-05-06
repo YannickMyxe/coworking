@@ -12,6 +12,11 @@
     // Get our button switcher
     let themeSwitcher = document.getElementById("theme-switcher");
 
+
+    const setColorText = function() {
+      let currentTheme = document.documentElement.getAttribute("data-theme");
+      themeSwitcher.innerText = `Switch to ${currentTheme} mode`;
+    }
     const switchColor = function() {
       // Get the current selected theme, on the first run
       // it should be `light`
@@ -24,7 +29,8 @@
       document.documentElement.setAttribute("data-theme", switchToTheme);
       localStorage.setItem("theme", switchToTheme)
 
-      themeSwitcher.innerText = `Switch to ${currentTheme} mode`;
+      setColorText();
+      
     };
 
       // When our button gets clicked
@@ -32,6 +38,6 @@
         switchColor();
       };
 
-      switchColor();
+      setColorText();
 
 }) ();
