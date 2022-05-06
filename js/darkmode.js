@@ -11,10 +11,8 @@
 
     // Get our button switcher
     let themeSwitcher = document.getElementById("theme-switcher");
-    themeSwitcher.innerText = `Switch to ${lclTheme} mode`;
 
-    // When our button gets clicked
-    themeSwitcher.onclick = function() {
+    const switchColor = function() {
       // Get the current selected theme, on the first run
       // it should be `light`
       let currentTheme = document.documentElement.getAttribute("data-theme");
@@ -26,8 +24,14 @@
       document.documentElement.setAttribute("data-theme", switchToTheme);
       localStorage.setItem("theme", switchToTheme)
 
-      themeSwitcher.innerText = `Switch to ${switchToTheme} mode`;
+      themeSwitcher.innerText = `Switch to ${currentTheme} mode`;
+    };
 
-    }
+      // When our button gets clicked
+      themeSwitcher.onclick = function() {
+        switchColor();
+      };
+
+      switchColor();
 
 }) ();
