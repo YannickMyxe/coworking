@@ -17,13 +17,22 @@
     --nav-bg: #474a50;
     --nav-hover: #24252a;
 
+    --border-radius: 30px;
+
 }
 
+/*
+  Color themes
+*/
 
 [data-theme="dark"] {
   --foreground: var(--dark-theme-text);
   --background: var(--dark-theme-background);
 }
+
+/*
+  General
+*/
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -59,35 +68,18 @@ a {
     text-decoration: underline;
 }
 
+a:hover {
+  color: var(--secondary);
+}
+
 /*
-    main
+    Navbar
 */
-
-main {
-    padding: 1.5rem;
-}
-
-main>section {
-    max-width: 70%;
-    margin: 0 auto;
-}
-
-main>section p + p {
-    margin-top: 0.8rem;
-}
-
-/* NAVBAR */
-
 header li, header a, header button {
   font-weight: 500;
   font-size: 25px;
   color: var(--white);
   text-decoration: none;
-}
-
-body {
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -130,14 +122,14 @@ header {
 }
 
 .nav_links li a:hover {
-  color: var(--nav-blue);
+  color: var(--primary);
 }
 
 header button {
   padding: 9px 25px;
-  background-color: var(--dark-theme-background);
+  background-color: var(--primary);
   border: none;
-  border-radius: 50px;
+  border-radius: var(--border-radius);
   cursor: pointer;
   transition: all 0.3s ease 0s;
 }
@@ -146,12 +138,8 @@ header img{
     height: 100px;
 }
 
-header button:hover {
-  background-color: var(--nav-hover);
-}
-
 .nav_links a.active {
-  color: var(--nav-blue);
+  color: var(--primary);
   text-decoration: underline;
   text-decoration-thickness: 4px;
   text-underline-offset: 5px;
@@ -202,42 +190,96 @@ header button:hover {
   transform: rotate(-45deg) translateY(-3px);
 }
 
+/*
+    main
+*/
 
-/* animations */
-
-@keyframes showDown {
-  0% {
-      margin-top: -150%;
-      opacity: 0;
-      left: -100%;
-  }
-
-  60% {
-      margin-top: 0;
-      opacity: 0;
-      left: -100%;
-  }
-
-  100% {
-      opacity: 1;
-  }
+main {
+    padding: 1.5rem;
 }
 
-@keyframes hideUp {
-  0% {
-      opacity: 1;
-      margin-top: 0;
+main>section {
+    max-width: 70%;
+    margin: 0 auto;
+}
 
-  }
+main>section p + p {
+    margin-top: 0.8rem;
+}
 
-  40% {
-      opacity: 0;
-      margin-top: 0;
-  }
+/* 
+  Body 
+*/
 
-  100% {
-      opacity: 0;
-      margin-top: -150%;
-      visibility: hidden;
-  }
+h1{
+    color: var(--primary);
+    size: 48px;
+    text-align: center;
+}
+
+h2{
+    text-align: center;
+    margin-top: 16px;
+}
+
+div{
+    text-align: center;
+}
+
+button {
+    color: var(--foreground);
+    padding: 9px 25px;
+    background-color: var(--primary);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    margin-top: 16px;
+}
+
+button:hover {
+    color: var(--primary);
+    background-color: var(--foreground);
+}
+
+
+/*    
+  Navbar animations
+*/
+
+@keyframes showDown {
+    0% {
+        margin-top: -150%;
+        opacity: 0;
+        left: -100%;
+    }
+  
+    60% {
+        margin-top: 0;
+        opacity: 0;
+        left: -100%;
+    }
+  
+    100% {
+        opacity: 1;
+    }
+}
+  
+  @keyframes hideUp {
+    0% {
+        opacity: 1;
+        margin-top: 0;
+  
+    }
+  
+    40% {
+        opacity: 0;
+        margin-top: 0;
+    }
+  
+    100% {
+        opacity: 0;
+        margin-top: -150%;
+        visibility: hidden;
+    }
 }
