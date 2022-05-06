@@ -1,3 +1,10 @@
+:root {
+    --green-color: #339129;
+    --yellow-color: #e5f50f;
+    --red-color: #f50f0f;
+    --blue-color: #0b71de;
+}
+
 .titel {
     color: #1BA089;
     text-align: center;
@@ -20,12 +27,22 @@
 }
 
 .green_house {
-    background-color: darkgreen;
+    background-color: var(--green-color);
     padding: 1rem;
 }
 
 .yellow_house {
-    background-color: yellow;
+    background-color: var(--yellow-color);
+    padding: 1rem;
+}
+
+.red_house {
+    background-color: var(--red-color);
+    padding: 1rem;
+}
+
+.blue_house {
+    background-color: var(--blue-color);
     padding: 1rem;
 }
 
@@ -38,11 +55,69 @@
     align-items: center;
 }
 
-.white_square>div {
+.white_square>.square_green {
     flex: 1 1 23%;
     margin: 5px;
-    height: 2.8rem;
+    height: 2.75rem;
     width: 1rem;
-    background-color: aqua;
-    border: 1px solid red;
+    background-color: var(--green-color);
+    border: 1px solid var(--green-color);
+}
+
+.white_square>.square_yellow {
+    flex: 1 1 23%;
+    margin: 5px;
+    height: 2.75rem;
+    width: 1rem;
+    background-color: var(--yellow-color);
+    border: 1px solid var(--yellow-color);
+}
+
+.white_square>.square_red {
+    flex: 1 1 23%;
+    margin: 5px;
+    height: 2.75rem;
+    width: 1rem;
+    background-color: var(--red-color);
+    border: 1px solid var(--red-color);
+}
+
+.white_square>.square_blue {
+    flex: 1 1 23%;
+    margin: 5px;
+    height: 2.75rem;
+    width: 1rem;
+    background-color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+}
+
+.mid_part {
+    width: 80px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+}
+
+.mid_part > .top_nine {
+    width: 80px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mid_part > .top_nine > .square {
+    height: 27.3px;
+    border: 1px solid #0e0e0e;
+}
+
+.mid_part > .bottom_nine {
+    width: 80px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mid_part > .bottom_nine > .square {
+    height: 27.3px;
+    border: 1px solid #0e0e0e;
 }
