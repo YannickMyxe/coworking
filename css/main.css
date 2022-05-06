@@ -19,6 +19,8 @@
 
     --border-radius: 30px;
 
+    --content-max-width: 70%;
+
 }
 
 /*
@@ -46,7 +48,7 @@ html {
     font-size: 18px;
 }
 
-main {
+body {
     background-color: var(--background);
 }
 
@@ -204,7 +206,7 @@ main {
 }
 
 main>section {
-    max-width: 70%;
+    max-width: var(--content-max-width);
     margin: 0 auto;
 }
 
@@ -247,6 +249,34 @@ button:hover {
     background-color: var(--foreground);
 }
 
+
+/*
+  Footer
+*/
+
+footer {
+  background-color: var(--background);
+  margin: 5rem 0rem;
+}
+footer>section {
+  border-top: 3px solid var(--foreground);
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding-top: 2rem;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: min-content 1fr min-content;
+}
+footer h2 {
+  color: var(--dark-theme-primary);
+}
+
+footer p {
+  color: var(--foreground);
+  max-width: 80%;
+  margin: 0 auto;
+}
 
 /*    
   Navbar animations
