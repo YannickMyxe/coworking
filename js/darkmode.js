@@ -11,6 +11,7 @@
 
     // Get our button switcher
     let themeSwitcher = document.getElementById("theme-switcher");
+    themeSwitcher.innerText = `Switch to ${lclTheme} mode`;
 
     // When our button gets clicked
     themeSwitcher.onclick = function() {
