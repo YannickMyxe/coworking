@@ -24,6 +24,9 @@
       // Set our currenet theme to the new one
       document.documentElement.setAttribute("data-theme", switchToTheme);
       localStorage.setItem("theme", switchToTheme)
+
+      themeSwitcher.innerText = `Switch to ${switchToTheme} mode`;
+
     }
 
 }) ();
