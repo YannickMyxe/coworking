@@ -8,6 +8,7 @@
 
     <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 
 </head>
@@ -28,19 +29,29 @@
         <section class="form">
             <h1>Contact form</h1>
             <form action="#">
-                <div class="input_comp">
-                    <label class="label" for="name">Name</label>
-                    <input type="text" placeholder="Type here your name" class="input">
+                <div>
+                    <label for="naam">Naam :
+                    <abbr title="Verplicht in te vullen veld" class="required">*</abbr></label>
+                    <input type="text" name="naam" id="naam" autocomplete="name" placeholder="Ludo Thegame" required>
+                    <div id="naam-valid" class="inputDescription">error</div>
                 </div>
-                <div class="input_comp">
-                    <label class="label" for="name">Email</label>
-                    <input type="text" placeholder="Type here your email" class="input">
+
+                <div>
+                    <label for="email">E-mail :
+                        <abbr title="Verplicht in te vullen veld" class="required">*</abbr>    
+                    </label>
+                    <input type="text" name="email" id="email" autocomplete="email" placeholder="vb. ludothegame@email.com" required >
+                    <div id="email-valid" class="inputDescription">error</div>
                 </div>
-                <div class="text_area">
-                    <label class="label" for="name">Message</label>
-                    <textarea name="textarea" placeholder="Type here your message"></textarea>
+            
+                <div class="message">
+                    <label for="message">Bericht :</label>
+                    <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="I love this game it's the best !"></textarea>
                 </div>
-                <input type="submit" value="Send">
+
+                <div>
+                    <button type="submit">Verzend</button>
+                </div>
             </form>
         </section>
     </main>
