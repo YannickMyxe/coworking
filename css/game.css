@@ -16,9 +16,9 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    max-width: 80vw;
+    max-width: 22.5vw;
     margin: 0 auto;
-    border: 3px solid blue;
+    border: 3px solid #0e0e0e;
 }
 
 .game>div {
