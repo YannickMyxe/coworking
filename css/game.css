@@ -195,33 +195,33 @@
     justify-content: center;
     position: absolute;
     display: block;
-    border: 40px solid transparent;
+    border: 50px solid transparent;
     border-top: 0;
-    border-bottom: 40px solid purple;
+    border-bottom: 50px solid purple;
 }
 
 .middle_part> .triangle:nth-child(1) {
     transform: rotate(180deg);
-    border-bottom: 40px solid var(--yellow-color);
+    border-bottom: 50px solid var(--yellow-color);
 }
 
 .middle_part> .triangle:nth-child(2) {
-    left: -20px;
-    top: 20px;
+    left: -25px;
+    top: 25px;
     transform: rotate(90deg);
-    border-bottom: 40px solid var(--green-color);
+    border-bottom: 50px solid var(--green-color);
 }
 
 .middle_part> .triangle:nth-child(3) {
-    right: -20px;
-    top: 20px;
+    right: -25px;
+    top: 25px;
     transform: rotate(-90deg);
-    border-bottom: 40px solid var(--blue-color);
+    border-bottom: 50px solid var(--blue-color);
 }
 
 .middle_part> .triangle:nth-child(4) {
     bottom: 0;
-    border-bottom: 40px solid var(--red-color);
+    border-bottom: 50px solid var(--red-color);
 }
 
 .right_part {
