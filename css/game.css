@@ -256,7 +256,8 @@
 form {
     display: flex;
     flex-direction: column;
-    width: 75%;
+    max-width: 25rem;
+    width: 75vw;
     margin: 2rem auto;
     background: #ababe0;
     padding: 1.5rem;
