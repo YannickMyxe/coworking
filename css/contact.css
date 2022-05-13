@@ -20,6 +20,10 @@ input, textarea {
     width: calc(100% - 1.5em);
 }
 
+textarea{
+    resize: none;
+}
+
 label > abbr.required, legend > abbr.required {
     color: var(--error-color);
     text-decoration: none;
@@ -48,6 +52,7 @@ div {
 .message textarea{
     height: 100px;
 }
+
 
 fieldset ul li {
     margin-bottom: 1em;
