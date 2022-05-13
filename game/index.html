@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <script defer src="/js/script.js"></script>
+    <script type="module" defer src="/js/colorPicker.js"></script>
 
 </head>
 <body>
@@ -35,6 +36,20 @@
     </header>
     <main>
         <h1 class="titel">Welkom bij Ludo!</h1>
+        <section>
+            <form id="color-picker">
+                <label for="speler">Selecteer speler: </label>
+                <select name="speler" id="speler">
+                    <option value="player-1">Speler 1</option>
+                    <option value="player-2">Speler 2</option>
+                    <option value="player-3">Speler 3</option>
+                    <option value="player-4">Speler 4</option>
+                </select>
+                <label for="color">Kleur </label>
+                <input type="color" name="color" id="color">
+                <button id="color-button">Select color</button>
+            </form>
+        </section>
         <section class="game">
             <div class="row_up">
                 <div class="green_house">
