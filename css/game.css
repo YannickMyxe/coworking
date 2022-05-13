@@ -12,8 +12,14 @@
     margin-bottom: 3rem;
 }
 
-.mid_part > .top_nine > .square:nth-child(3n + 5),  
-.mid_part > .bottom_nine > .square:nth-child(3n + 2){
+.row_up > .mid_part > .top_nine > .square:nth-child(3n + 5),  
+.row_up > .mid_part > .bottom_nine > .square:nth-child(3n + 2){
+    background-color: var(--yellow-color);
+}
+
+.row_bottom > .mid_part > .top_nine > .square:nth-child(3n-1),  
+.row_bottom > .mid_part > .bottom_nine > .square:nth-child(2), 
+.row_bottom > .mid_part > .bottom_nine > .square:nth-child(5) {
     background-color: var(--yellow-color);
 }
 
