@@ -20,7 +20,7 @@
 .row_bottom > .mid_part > .top_nine > .square:nth-child(3n-1),  
 .row_bottom > .mid_part > .bottom_nine > .square:nth-child(2), 
 .row_bottom > .mid_part > .bottom_nine > .square:nth-child(5) {
-    background-color: var(--yellow-color);
+    background-color: var(--red-color);
 }
 
 
