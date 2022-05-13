@@ -4,12 +4,24 @@
     --red-color: #f50f0f;
     --blue-color: #0b71de;
     --white-color: #f0f8ff;
+
+
+    --part-size: 100px;
+    --square-size: calc(var(--square-size) / 3);
+    --house-size: 1rem;
+    --home-square-size: 28%;
+
 }
 
 .titel {
     color: #1BA089;
     text-align: center;
     margin-bottom: 3rem;
+}
+
+.square {
+    height: var(--square-size);
+    border: 1px solid #0e0e0e;
 }
 
 .row_up > .mid_part > .top_nine > .square:nth-child(3n + 5),  
@@ -57,27 +69,36 @@
 
 .green_house {
     background-color: var(--green-color);
-    padding: 1rem;
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
 }
 
 .yellow_house {
     background-color: var(--yellow-color);
-    padding: 1rem;
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
 }
 
 .red_house {
     background-color: var(--red-color);
-    padding: 1rem;
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
 }
 
 .blue_house {
     background-color: var(--blue-color);
-    padding: 1rem;
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
 }
 
 .white_square {
     background-color: var(--white-color);
     padding: 1rem;
+    justify-content: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -85,104 +106,87 @@
 }
 
 .white_square>.square_green {
-    flex: 1 1 23%;
     margin: 5px;
     height: 2.75rem;
-    width: 1rem;
+    width: 2.75rem;
     background-color: var(--green-color);
     border: 1px solid var(--green-color);
 }
 
 .white_square>.square_yellow {
-    flex: 1 1 23%;
     margin: 5px;
     height: 2.75rem;
-    width: 1rem;
+    width: 2.75rem;
     background-color: var(--yellow-color);
     border: 1px solid var(--yellow-color);
 }
 
 .white_square>.square_red {
-    flex: 1 1 23%;
     margin: 5px;
     height: 2.75rem;
-    width: 1rem;
+    width: 2.75rem;
     background-color: var(--red-color);
     border: 1px solid var(--red-color);
 }
 
 .white_square>.square_blue {
-    flex: 1 1 23%;
     margin: 5px;
     height: 2.75rem;
-    width: 1rem;
+    width: 2.75rem;
     background-color: var(--blue-color);
     border: 1px solid var(--blue-color);
 }
 
 .mid_part {
-    width: 80px;
-    height: 100px;
     display: flex;
     flex-direction: column;
 }
 
 .mid_part > .top_nine {
-    width: 80px;
-    height: 100px;
+    width: var(--part-size);
+    height: var(--part-size);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 .mid_part > .top_nine > .square {
-    height: 27.3px;
+    height: var(--square-size);
+    width: var(--square-size);
     border: 1px solid #0e0e0e;
 }
 
 .mid_part > .bottom_nine {
-    width: 80px;
-    height: 100px;
+    width: var(--part-size);
+    height: var(--part-size);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
 
 .mid_part > .bottom_nine > .square {
-    height: 27.3px;
+    height: var(--square-size);
     border: 1px solid #0e0e0e;
 }
 
 .left_part {
-    width: 173px;
-    height: 80px;
     display: flex;
 }
 
 .left_part > .left_nine {
-    width: 100px;
+    width: var(--part-size);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-.left_part > .left_nine > .square {
-    height: 25px;
-    border: 1px solid #0e0e0e;
 }
 
 .left_part > .right_nine {
-    width: 100px;
+    width: var(--part-size);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-.left_part > .right_nine > .square {
-    height: 25px;
-    border: 1px solid #0e0e0e;
 }
 
 .middle_part {
     position: relative;
-    width: 80px;
-    height: 80px;
+    width: var(--part-size);
+    height: var(--part-size);
     display: flex;
 }
 
@@ -221,29 +225,17 @@
 }
 
 .right_part {
-    width: 173px;
-    height: 80px;
     display: flex;
 }
 
 .right_part > .left_nine {
-    width: 100px;
+    width: var(--part-size);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-.right_part > .left_nine > .square {
-    height: 25px;
-    border: 1px solid #0e0e0e;
 }
 
 .right_part > .right_nine {
-    width: 100px;
+    width: var(--part-size);
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-}
-
-.right_part > .right_nine > .square {
-    height: 25px;
-    border: 1px solid #0e0e0e;
 }
