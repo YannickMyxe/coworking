@@ -243,3 +243,40 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
+
+
+
+
+/*
+
+ *** FORM ***
+
+*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    margin: 2rem auto;
+    background: #ababe0;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+}
+
+label {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+form>* {
+    width: 100%;
+}
+
+select {
+    padding: 1rem 0.8rem;
+}
+
+input[type=color] {
+    margin-bottom: 1rem;
+}
+
