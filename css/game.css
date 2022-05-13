@@ -97,7 +97,7 @@
 
 .white_square {
     background-color: var(--white-color);
-    padding: 1rem;
+    padding: 1.25rem;
     justify-content: center;
     display: flex;
     flex-direction: row;
