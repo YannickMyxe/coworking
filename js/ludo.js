@@ -47,6 +47,6 @@ return `<svg class="${pawnColors[index]}">
 const pawn_space = document.querySelector(`.pawn-space`);
 
 for (let index = 0; index < (aantalPionen * aantalSpelers); index++) {
-    pawn_space.innerHTML += pawnSvg(index % 4);
+    pawn_space.innerHTML += pawnSvg(index % aantalSpelers);
 };
 
