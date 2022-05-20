@@ -282,7 +282,10 @@ input[type=color] {
 }
 
 .pawn-space {
-    border: 3vw solid aquamarine;
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 svg {
