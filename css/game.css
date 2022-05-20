@@ -282,7 +282,7 @@ input[type=color] {
 }
 
 .pawn-space {
-    max-width: 50vw;
+    max-width: 70%;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
