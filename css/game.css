@@ -282,14 +282,12 @@ input[type=color] {
 }
 
 .pawn-space {
-    max-width: 50vw;
-    margin: 0 auto;
-    display: flex;
-    flex-wrap: wrap;
+    border: 3vw solid aquamarine;
 }
 
 svg {
     width: 50px;
+    height: 80px;
 }
 
 .green-pawn path, .green-pawn polygon {
