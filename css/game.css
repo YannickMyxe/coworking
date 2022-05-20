@@ -281,3 +281,16 @@ input[type=color] {
     margin-bottom: 1rem;
 }
 
+
+.green-pawn path, .green-pawn polygon {
+    fill: var(--green-color);
+}
+.yellow-pawn path, .yellow-pawn polygon {
+    fill: var(--yellow-color);
+}
+.blue-pawn path, .blue-pawn polygon {
+    fill: var(--blue-color);
+}
+.red-pawn path, .red-pawn polygon {
+    fill: var(--red-color);
+}

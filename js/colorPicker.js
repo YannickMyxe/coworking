@@ -6,6 +6,8 @@
     const button = document.querySelector("#color-button");
     const playerSelector = document.querySelector(`#speler`);
 
+    const pawns = document.querySelectorAll('svg path, svg polygon');
+
     form.addEventListener('submit', e => {
         e.preventDefault();
     });
