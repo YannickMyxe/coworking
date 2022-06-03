@@ -79,7 +79,11 @@ const rollDice = () => {
 
 console.log('Dice roll! ', rollDice());
 const rolls = [0, 0, 0, 0, 0, 0]
-for (let index = 0; index < 1_000; index++) {
-    rolls[rollDice()-1]++;
+
+for (let index = 0; index < 100; index++) {
+    const player = index % aantalSpelers;
+    const roll = rollDice();
+    rolls[roll-1]++;
+    console.log(`Player [${player}] has rolled a ${roll}`);
 }
 console.log(rolls);
