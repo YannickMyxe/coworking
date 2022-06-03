@@ -59,6 +59,7 @@
 }
 
 .game {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -283,13 +284,25 @@ input[type=color] {
 
 .pawn-space {
     max-width: 70%;
+    position: absolute;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
+.game > .pawn-space {
+    border: 3px solid #aae;
+}
+
+.pawn-space:nth-child(0) {
+    border: 1px solid #fe25c5;
+}
+
 svg {
+    z-index: 500;
     width: 50px;
+    top: 0;
+    right: 0;
 }
 
 .green-pawn path, .green-pawn polygon {
@@ -303,4 +316,22 @@ svg {
 }
 .red-pawn path, .red-pawn polygon {
     fill: var(--red-color);
+}
+
+.dice_roll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice {
+    width: 15rem;
+}
+
+.roll {
+    cursor: pointer;
+    margin-top: 2rem;
+    font-size: 5rem;
+    color: #0c0c0c;
 }
