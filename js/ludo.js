@@ -59,6 +59,7 @@ const pawnSvg = (index) => {
     marianne.setAttribute("d", "M44,53v-1.843c0-2.274-1.837-4.123-4.104-4.152L39.562,44H20.438l-0.334,3.005C17.837,47.034,16,48.883,16,51.157V53h-2v7 h32v-7H44z")
     dylan.appendChild(marianne)
     console.log(dylan);
+    
 
 
     return dylan;
