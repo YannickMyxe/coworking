@@ -247,17 +247,6 @@ const move_player = function(player, pawn) {
         boardLocations[pawn_locations[player]].y);
 };
 
-console.log("Pawn array", pawn_objects);
-console.log(pawn_objects[2]);
-
-const doALoopForMe = async function() {
-    const sleep = ms => new Promise(r => setTimeout(r, ms));
-    for (let index = 0; index < boardLocations.length; index++) {
-        await sleep(100);
-        move_player(3, 0);
-    }
-}();
-
 const greenSquare1 = document.querySelector('.square_green:nth-child(1)');
 const greenSquare2 = document.querySelector('.square_green:nth-child(2)');
 const greenSquare3 = document.querySelector('.square_green:nth-child(3)');
