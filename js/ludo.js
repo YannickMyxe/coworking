@@ -225,7 +225,12 @@ const boardLocations = [
 ]
 
 const board_starts = [42, 3, 16, 29];
-const pawn_locations = board_starts;
+const pawn_locations = [
+    42, 42, 42, 42,
+     3,  3,  3,  3,
+    16, 16, 16, 16,
+    29, 29, 29, 29,
+];
 
 const positionElement = function (el, x, y) {
     if (!el.style) return;
@@ -234,17 +239,37 @@ const positionElement = function (el, x, y) {
     el.style.top =  y + 5 - board.y + 'px';
 };
 
+const checkIfOnTopOfOtherPlayer = function(pawn) {
+    let index = -1;
+    for (let index = 0; index < pawn_locations.length; ++index) {
+        if (pawn !== index)
+            if (pawn_locations[pawn] === pawn_locations[index] 
+                && 
+                pawn_locations[pawn] !== board_starts[index % 4]) {
+                return (index);
+            }
+    }
+    return index;
+}
+
+
 const move_player = function(player, pawn, roll) {
-    if (pawn_locations[player] + roll > boardLocations.length-2) 
-        pawn_locations[player] = 0;
+    if (pawn_locations[player * 4 + pawn] + roll > boardLocations.length-2) 
+        pawn_locations[player * 4 + pawn] = 0;
     else 
-    pawn_locations[player] = pawn_locations[player] + roll;
+    pawn_locations[player * 4 + pawn] = pawn_locations[player * 4 + pawn] + roll;
     
-    //console.log(`Moving player[${player}], pawn[${pawn}] to [${pawn_locations[player]}]`);
+    console.log(`Moving player[${player}] '${roll}' spaces, pawn[${pawn}] to [${pawn_locations[player * 4 + pawn]}]`);
+    let other = checkIfOnTopOfOtherPlayer(player * 4 + pawn);
+    if (other !== -1) {
+        pawn_locations[other] = board_starts[other % 4];
+        console.log(`Returning player ${other+1} to start, thanks to player ${player+1}`);
+
+    }  
     positionElement(
         pawn_objects[player * 4 + pawn], 
-        boardLocations[pawn_locations[player]].x, 
-        boardLocations[pawn_locations[player]].y);
+        boardLocations[pawn_locations[player* 4 + pawn]].x, 
+        boardLocations[pawn_locations[player* 4 + pawn]].y);
 };
 
 const greenSquare1 = document.querySelector('.square_green:nth-child(1)');
