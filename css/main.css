@@ -312,6 +312,7 @@ footer span{
   font-size: 1.8rem;
   font-weight: 400;
   text-transform: uppercase;
+  columns: var(--dark-theme-text);
   line-height: 3rem;
 }
 
