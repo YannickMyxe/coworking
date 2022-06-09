@@ -79,6 +79,7 @@ const pawn_objects = green_pawns.concat(yellow_pawns).concat(blue_pawns).concat(
 
 let dice = document.querySelector(".dice");
 let roll = document.querySelector(".roll");
+let turn = 1;
 dice.addEventListener('click', () => {
     let diceRoll = Math.floor(Math.random() * 6) + 1;
 
@@ -100,7 +101,21 @@ dice.addEventListener('click', () => {
         roll.innerHTML = ("⚅");
     }
 
+    if(turn === 1) {
+        console.log("Player 1's turn");
+        turn++;
+    } else if(turn === 2) {
+        console.log("Player 2's turn");
+        turn++;
+    } else if(turn === 3) {
+        console.log("Player 3's turn");
+        turn++;
+    } else {
+        console.log("Player 4's turn");
+        turn = 1;
+    }
 
+    
 })
 
 const board_element = document.querySelector(".game");
