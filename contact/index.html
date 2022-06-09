@@ -7,6 +7,7 @@
     <title>Contact</title>
 
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <script defer src="/js/navbar.js"></script>
 </head>
@@ -34,20 +35,24 @@
     <main>
         <section class="form">
             <h1>Contact form</h1>
-            <form action="#">
-                <div class="input_comp">
-                    <label class="label" for="name">Name</label>
-                    <input type="text" placeholder="Type here your name" class="input">
+            <form id="form" novalidate>
+                <div class="input-control">
+                    <label for="naam">Naam<abbr class="required">*</abbr>
+                    </label>
+                    <input id="naam" name="naam" type="text" autocomplete="name" placeholder="Voornaam Achternaam">
+                    <div class="error"></div>
                 </div>
-                <div class="input_comp">
-                    <label class="label" for="name">Email</label>
-                    <input type="text" placeholder="Type here your email" class="input">
+                <div class="input-control">
+                    <label for="email">Email<abbr class="required">*</abbr></label>
+                    <input id="email" name="email" type="text" autocomplete="email" placeholder="VoornaamAchternaam@mail.com">
+                    <div class="error"></div>
                 </div>
-                <div class="text_area">
-                    <label class="label" for="name">Message</label>
-                    <textarea name="textarea" placeholder="Type here your message"></textarea>
+                <div class="input-control">
+                    <label for="bericht">Bericht<abbr class="required">*</abbr></label>
+                    <textarea rows="5" cols="50" id="bericht" name="bericht" type="text" placeholder="Typ hier je bericht"></textarea>
+                    <div class="error"></div>
                 </div>
-                <input type="submit" value="Send">
+                <button type="submit">Send it !</button>
             </form>
         </section>
     </main>
