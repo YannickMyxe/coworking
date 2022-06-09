@@ -261,7 +261,7 @@ const checkCollision = function(pawn) {
             //console.warn(`Checking for pawn #${index}`);
             if (pawn_locations[pawn] === pawn_locations[index]) {
                 if (pawn_locations[index] !== board_starts[Math.floor(index / 4)]) {
-                    console.warn(`found match, setting pawn #${index} (player ${Math.floor(index / 4)} :: ${Math.floor(index / 4) + index % 4}) to loation ${board_starts[Math.floor(index / 4)]}`)
+                    console.warn(`found match, setting pawn #${index} (player ${Math.floor(index / 4)} :: ${index % 4}) to loation ${board_starts[Math.floor(index / 4)]}`)
                     pawn_locations[index] = board_starts[Math.floor(index / 4)];
                 }
                 else {
