@@ -251,19 +251,25 @@ const positionElement = function (el, x, y) {
     el.style.top =  y + 5 - board.y + 'px';
 };
 
-const checkIfOnTopOfOtherPlayer = function(pawn) {
-    let index = -1;
+const checkCollision = function(pawn) {
     for (let index = 0; index < pawn_locations.length; ++index) {
-        if (pawn !== index)
-            if (pawn_locations[pawn] === pawn_locations[index] 
-                && 
-                pawn_locations[pawn] !== board_starts[index % 4]) {
-                return (index);
+        if (Math.floor(index / 4) === Math.floor(pawn / 4)) {
+            //console.warn(`Same color => skipping #${index}`);
+            index += 3; // skip the rest
+        } else {
+            //console.warn(`Checking for pawn #${index}`);
+            if (pawn_locations[pawn] === pawn_locations[index]) {
+                if (pawn_locations[index] !== board_starts[Math.floor(index / 4)]) {
+                    console.warn(`found match, setting pawn #${index} (player ${Math.floor(index / 4)} :: ${Math.floor(index / 4) + index % 4}) to loation ${board_starts[Math.floor(index / 4)]}`)
+                    pawn_locations[index] = board_starts[Math.floor(index / 4)];
+                }
+                else {
+                    console.warn(`Cannot collide with a home square`);
+                }
             }
+        }
     }
-    return index;
 }
-
 
 const move_player = function(player, pawn, roll) {
     if (pawn_locations[player * 4 + pawn] + roll > boardLocations.length-2) 
@@ -271,13 +277,8 @@ const move_player = function(player, pawn, roll) {
     else 
     pawn_locations[player * 4 + pawn] = pawn_locations[player * 4 + pawn] + roll;
     
-    console.log(`Moving player[${player}] '${roll}' spaces, pawn[${pawn}] to [${pawn_locations[player * 4 + pawn]}]`);
-    let other = checkIfOnTopOfOtherPlayer(player * 4 + pawn);
-    if (other !== -1) {
-        pawn_locations[other] = board_starts[other % 4];
-        console.log(`Returning player ${other+1} to start, thanks to player ${player+1}`);
-
-    }  
+    //console.log(`Moving player[${player}] '${roll}' spaces, pawn[${pawn}] to [${pawn_locations[player * 4 + pawn]}]`);
+    checkCollision(player * 4 + pawn);
     positionElement(
         pawn_objects[player * 4 + pawn], 
         boardLocations[pawn_locations[player* 4 + pawn]].x, 
