@@ -247,6 +247,15 @@ button:hover {
     background-color: var(--foreground);
 }
 
+button > a {
+  text-decoration: none;
+  color: var(--dark-theme-text);
+}
+
+button > a:hover {
+  color: var(--black-theme-text);
+}
+
 
 /*    
   Navbar animations
