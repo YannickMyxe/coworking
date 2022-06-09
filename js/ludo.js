@@ -115,7 +115,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            //Code om te verplaatsen
+            move_player(0, 0);
         }
         turn++;
     } else if(turn === 2) {
@@ -128,7 +128,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            //Code om te verplaatsen
+            move_player(1, 0);
         }
         turn++;
     } else if(turn === 3) {
@@ -141,7 +141,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            //Code om te verplaatsen
+            move_player(2, 0);
         }
         turn++;
     } else {
@@ -154,7 +154,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            //Code om te verplaatsen
+            move_player(3, 0);
         }
         turn = 1;
     }
