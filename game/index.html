@@ -6,26 +6,231 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>game</title>
 
-    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/game.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="icon" type="image/x-icon" href="/img/LOGO.png">
+    <script defer src="/js/navbar.js"></script>
+
+    <script defer src="../js/darkmode.js"></script>
+    <script type="module" defer src="/js/colorPicker.js"></script>
+    <script type="module" defer src="/js/ludo.js"></script>
+    <script defer src="https://kit.fontawesome.com/1c1b16884a.js" crossorigin="anonymous"></script>
+
+
 </head>
 <body>
     <header>
-        <a href="/home/">
-            <img class="logo" src="/img/LOGO.png" alt="Logo">
-        </a>
-        <nav>
+        <div class="flex">
+            <a href="/home/">
+                <img class="logo" src="/img/LOGO.png" alt="Logo">
+            </a>
+            <button aria-expanded="false" class="hamburger" id="menu">
+                <span aria-hidden="true" class="icon">
+                    <span></span><span></span><span></span>
+                </span>
+                <span>Menu</span>
+            </button>
+        </div>
+        <button id="theme-switcher">Switch themes!</button>
+        <nav class="navbar">
             <ul class="nav_links">
-                <li><a href="/home/">Home</a></li>
-                <li><a class="active" href="/game/">Game</a></li>
-                <li><a href="/contact/">Contact</a></li>
+                <li><a href="../home/">Home</a></li>
+                <li><a class="active" href="../game/">Game</a></li>
+                <li><a href="../contact/">Contact</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div>
-            <h1>This is the game</h1>
-        </div>
+        <h1 class="titel">Welkom bij Ludo!</h1>
+        <section class="game">
+            <div class="row_up">
+                <div class="green_house">
+                    <div class="white_square">
+                        <div class="square_green"></div>
+                        <div class="square_green"></div>
+                        <div class="square_green"></div>
+                        <div class="square_green"></div>
+                    </div>
+                </div>
+
+                <div class="mid_part">
+                    <div class="top_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <div class="bottom_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
+
+                <div class="yellow_house">
+                    <div class="white_square">
+                        <div class="square_yellow"></div>
+                        <div class="square_yellow"></div>
+                        <div class="square_yellow"></div>
+                        <div class="square_yellow"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="middle_row">
+                <div class="left_part">
+                    <div class="left_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <div class="right_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
+                <div class="middle_part">
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                    <div class="triangle"></div>
+                </div>
+                <div class="right_part">
+                    <div class="left_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <div class="right_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="row_bottom">
+                <div class="red_house">
+                    <div class="white_square">
+                        <div class="square_red"></div>
+                        <div class="square_red"></div>
+                        <div class="square_red"></div>
+                        <div class="square_red"></div>
+                    </div>
+                </div>
+
+                <div class="mid_part">
+                    <div class="top_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                    <div class="bottom_nine">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
+
+                <div class="blue_house">
+                    <div class="white_square">
+                        <div class="square_blue"></div>
+                        <div class="square_blue"></div>
+                        <div class="square_blue"></div>
+                        <div class="square_blue"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="pawn-space">
+                <div class="green-pawn"></div>
+                <div class="green-pawn"></div>
+                <div class="green-pawn"></div>
+                <div class="green-pawn"></div>
+                
+                <div class="yellow-pawn"></div>
+                <div class="yellow-pawn"></div>
+                <div class="yellow-pawn"></div>
+                <div class="yellow-pawn"></div>
+                
+                <div class="red-pawn"></div>
+                <div class="red-pawn"></div>
+                <div class="red-pawn"></div>
+                <div class="red-pawn"></div>
+                
+                <div class="blue-pawn"></div>
+                <div class="blue-pawn"></div>
+                <div class="blue-pawn"></div>
+                <div class="blue-pawn"></div>           
+            </div>
+            <div class="turn-message"></div>
+            
+        </section>
+        <section class="dice_roll">
+            <button class="dice"> ROLL THE DICE </button> <p class="roll"></p>
+        </section>
+        <section>
+            <form id="color-picker">
+                <h2>Selecteer een speler</h2>
+                <label for="speler">Selecteer speler: </label>
+                <select name="speler" id="speler">
+                    <option value="player-1">Speler 1</option>
+                    <option value="player-2">Speler 2</option>
+                    <option value="player-3">Speler 3</option>
+                    <option value="player-4">Speler 4</option>
+                </select>
+                <label for="color">Kleur </label>
+                <input type="color" name="color" id="color">
+                <button id="color-button">Select color</button>
+            </form>
+
+        </section>
     </main>
 </body>
 </html>

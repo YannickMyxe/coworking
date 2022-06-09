@@ -1,12 +1,429 @@
-div{
-    background-color: blue;
-    height: 750px;
-    width: 750px;
-    margin-left: auto;
-    margin-right: auto;
+:root {
+    --green-color: #339129;
+    --yellow-color: #e5f50f;
+    --red-color: #f50f0f;
+    --blue-color: #0b71de;
+    --white-color: #f0f8ff;
+
+
+    --part-size: 100px;
+    --square-size: calc(var(--square-size) / 3);
+    --house-size: 1rem;
+    --home-square-size: 28%;
+
 }
 
-h1 {
+.titel {
+    color: #1BA089;
     text-align: center;
-    color: aliceblue;
-  }
+    margin-bottom: 3rem;
+}
+
+.square {
+    height: var(--square-size);
+    border: 1px solid #0e0e0e;
+}
+
+.row_up > .mid_part > .top_nine > .square:nth-child(3n + 5),  
+.row_up > .mid_part > .bottom_nine > .square:nth-child(3n + 2),
+.row_up > .mid_part > .top_nine > .square:nth-child(6){
+    background-color: var(--yellow-color);
+}
+
+.row_bottom > .mid_part > .top_nine > .square:nth-child(3n-1),  
+.row_bottom > .mid_part > .bottom_nine > .square:nth-child(4),  
+.row_bottom > .mid_part > .bottom_nine > .square:nth-child(2), 
+.row_bottom > .mid_part > .bottom_nine > .square:nth-child(5) {
+    background-color: var(--red-color);
+}
+
+
+.left_part > .left_nine > .square:nth-child(5),
+.left_part > .left_nine > .square:nth-child(6),
+.left_part > .left_nine > .square:nth-child(2),
+
+.left_part > .right_nine > .square:nth-child(4),
+.left_part > .right_nine > .square:nth-child(5),
+.left_part > .right_nine > .square:nth-child(6) {
+    background-color: var(--green-color);
+}
+
+.right_part > .left_nine > .square:nth-child(4),
+.right_part > .left_nine > .square:nth-child(5),
+.right_part > .left_nine > .square:nth-child(6),
+.right_part > .right_nine > .square:nth-child(8),
+
+.right_part > .right_nine > .square:nth-child(4),
+.right_part > .right_nine > .square:nth-child(5) {
+    background-color: var(--blue-color);
+}
+
+.game {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.green-pawn:nth-child(1) {
+    position: absolute;
+    top: 3.20rem;
+    left: 24.47rem;
+}
+
+.green-pawn:nth-child(2) {
+    position: absolute;
+    top: 3.20rem;
+    left: 27.8rem;
+}
+
+.green-pawn:nth-child(3) {
+    position: absolute;
+    top: 6.5rem;
+    left: 24.47rem;
+}
+
+.green-pawn:nth-child(4) {
+    position: absolute;
+    top: 6.5rem;
+    left: 27.8rem;
+}
+
+.yellow-pawn:nth-child(5) {
+    position: absolute;
+    top: 3.20rem;
+    right: 24.47rem;
+}
+
+.yellow-pawn:nth-child(6) {
+    position: absolute;
+    top: 3.20rem;
+    right: 27.8rem;
+}
+
+.yellow-pawn:nth-child(7) {
+    position: absolute;
+    top: 6.5rem;
+    right: 24.47rem;
+}
+
+.yellow-pawn:nth-child(8) {
+    position: absolute;
+    top: 6.5rem;
+    right: 27.8rem;
+}
+
+.red-pawn:nth-child(9) {
+    position: absolute;
+    top: 19.9rem;
+    left: 24.47rem;
+}
+
+.red-pawn:nth-child(10) {
+    position: absolute;
+    top: 19.9rem;
+    left: 27.8rem;
+}
+
+.red-pawn:nth-child(11) {
+    position: absolute;
+    top: 23.2rem;
+    left: 24.47rem;
+}
+
+.red-pawn:nth-child(12) {
+    position: absolute;
+    top: 23.2rem;
+    left: 27.8rem;
+}
+
+.blue-pawn:nth-child(13) {
+    position: absolute;
+    top: 19.9rem;
+    right: 24.47rem;
+}
+
+.blue-pawn:nth-child(14) {
+    position: absolute;
+    top: 19.9rem;
+    right: 27.8rem;
+}
+
+.blue-pawn:nth-child(15) {
+    position: absolute;
+    top: 23.2rem;
+    right: 24.47rem;
+}
+
+.blue-pawn:nth-child(16) {
+    position: absolute;
+    top: 23.2rem;
+    right: 27.8rem;
+}
+
+.game>div {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.green_house {
+    background-color: var(--green-color);
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
+}
+
+.yellow_house {
+    background-color: var(--yellow-color);
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
+}
+
+.red_house {
+    background-color: var(--red-color);
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
+}
+
+.blue_house {
+    background-color: var(--blue-color);
+    padding: var(--house-size);
+    width: calc(2 * var(--part-size));
+    height: calc(2 * var(--part-size));
+}
+
+.white_square {
+    background-color: var(--white-color);
+    padding: 1.25rem;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.white_square>.square_green {
+    margin: 5px;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: var(--green-color);
+    border: 1px solid var(--green-color);
+}
+
+.white_square>.square_yellow {
+    margin: 5px;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: var(--yellow-color);
+    border: 1px solid var(--yellow-color);
+}
+
+.white_square>.square_red {
+    margin: 5px;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: var(--red-color);
+    border: 1px solid var(--red-color);
+}
+
+.white_square>.square_blue {
+    margin: 5px;
+    height: 2.75rem;
+    width: 2.75rem;
+    background-color: var(--blue-color);
+    border: 1px solid var(--blue-color);
+}
+
+.mid_part {
+    display: flex;
+    flex-direction: column;
+}
+
+.mid_part > .top_nine {
+    width: var(--part-size);
+    height: var(--part-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mid_part > .top_nine > .square {
+    height: var(--square-size);
+    width: var(--square-size);
+    border: 1px solid #0e0e0e;
+}
+
+.mid_part > .bottom_nine {
+    width: var(--part-size);
+    height: var(--part-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mid_part > .bottom_nine > .square {
+    height: var(--square-size);
+    border: 1px solid #0e0e0e;
+}
+
+.left_part {
+    display: flex;
+}
+
+.left_part > .left_nine {
+    width: var(--part-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.left_part > .right_nine {
+    width: var(--part-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.middle_part {
+    position: relative;
+    width: var(--part-size);
+    height: var(--part-size);
+    display: flex;
+}
+
+.middle_part > .triangle {
+    top: 0;
+    justify-content: center;
+    position: absolute;
+    display: block;
+    border: 50px solid transparent;
+    border-top: 0;
+    border-bottom: 50px solid purple;
+}
+
+.middle_part> .triangle:nth-child(1) {
+    transform: rotate(180deg);
+    border-bottom: 50px solid var(--yellow-color);
+}
+
+.middle_part> .triangle:nth-child(2) {
+    left: -25px;
+    top: 25px;
+    transform: rotate(90deg);
+    border-bottom: 50px solid var(--green-color);
+}
+
+.middle_part> .triangle:nth-child(3) {
+    right: -25px;
+    top: 25px;
+    transform: rotate(-90deg);
+    border-bottom: 50px solid var(--blue-color);
+}
+
+.middle_part> .triangle:nth-child(4) {
+    bottom: 0;
+    border-bottom: 50px solid var(--red-color);
+}
+
+.right_part {
+    display: flex;
+}
+
+.right_part > .left_nine {
+    width: var(--part-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.right_part > .right_nine {
+    width: var(--part-size);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+/*
+
+ *** FORM ***
+
+*/
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 25rem;
+    width: 75vw;
+    margin: 2rem auto;
+    background: #ababe0;
+    padding: 1.5rem;
+    border-radius: 1.2rem;
+}
+
+label {
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+form>* {
+    width: 100%;
+}
+
+select {
+    padding: 1rem 0.8rem;
+}
+
+input[type=color] {
+    margin-bottom: 1rem;
+}
+
+.game > .pawn-space {
+    max-width: 70%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pawn-space > div {
+    z-index: 500;
+    width: 25px;
+    height: 25px;
+    outline: 1px solid #000;
+    border-radius: 25px;
+    box-shadow: 0 0 .12rem .1rem #000;
+}
+
+.green-pawn {
+    background-color: var(--green-color);
+}
+.yellow-pawn {
+    background-color: var(--yellow-color);
+}
+.blue-pawn {
+    background-color: var(--blue-color);
+}
+.red-pawn {
+    background-color: var(--red-color);
+}
+
+.dice_roll {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.dice {
+    width: 15rem;
+    margin-top: 1rem;
+}
+
+
+
+.game > .turn-message {
+    width: 100%;
+    min-height: 5rem;
+    max-height: 5rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
