@@ -215,6 +215,26 @@ main>section p + p {
 /* 
   Body 
 */
+.skip-links{
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.skip-links a{
+  padding: 0.5em 0.75em;
+  position: absolute;
+  top: -3em;
+  background-color: var(--bg);
+  color: var(--primary);
+  font-size: 1.125em;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.skip-links a:focus{
+  top: 0;
+}
 
 h1{
     color: var(--primary);
@@ -262,7 +282,126 @@ button > a:hover {
   font-size: 5rem;
   color: var(--foreground);
 }
+/*Footer*/
+footer{
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--nav-bg);
+  height: auto;
+  padding-top: 10px;
+  color: #fff;
+}
 
+footer p{
+  color: var(--white);
+}
+
+footer span{
+  color: #00f7ff;
+}
+
+.footer-content{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.footer-content h3{
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: 3rem;
+}
+
+.footer-content p{
+  max-width: 500px;
+  margin: 5px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials{
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0 3rem 0;
+}
+
+.socials li{
+  margin: 0 25px;
+}
+
+.socials a{
+  text-decoration: none;
+  color: #fff;
+}
+
+.socials a i{
+  font-size: 1.1rem;
+  transition: color .4s ease;
+
+}
+
+.socials a:hover i{
+  color: #0f0f14;
+}
+
+footer button{
+  display: flex;
+  z-index: 1;
+  padding: 9px 25px;
+  border-radius: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--dark-theme-text);
+  border: 3px solid #00f7ff;
+  background-color: var(--bg);
+  justify-content: center;
+  width: 20%;
+}
+
+footer button:hover{
+  cursor: pointer;
+  transition: 0.5s all ease;
+  background-color: #00f7ff;
+}
+
+/*media querie*/
+@media (min-width: 48.875em) {
+    #menu {
+        display: flex;
+    }
+
+    #menu[aria-expanded=false] + nav {
+        animation: none;
+    }
+
+    header .content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    header nav a {
+        padding: 1rem 2rem;
+    }
+
+    header nav a:focus-visible::before,
+    header nav a:hover::before,
+    header nav a.active::before {
+        left: .5em;
+        top: .5em;
+    }
+}
 
 /*    
   Navbar animations

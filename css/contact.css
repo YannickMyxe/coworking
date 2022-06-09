@@ -12,9 +12,10 @@
     padding: 20px;
     border-radius: 4px;
     font-size: 24px;
+    text-align: center;
 }
 
-button {
+.submit button {
     border: 0;
     width: 95%;
     background-color: var(--button-color);
@@ -25,7 +26,7 @@ button {
     cursor: pointer; 
 }
 
-button:hover {
+.submit button:hover {
     background-color: var(--button-hover-color);
     color: #1ba089;
 }
@@ -67,6 +68,11 @@ abbr{
     height: 13px;
     margin-top: 5px;
     margin-bottom: 15px;
+}
+
+div{
+    text-align: left;
+    margin-top: 10px;
 }
 
 
