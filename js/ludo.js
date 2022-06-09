@@ -368,10 +368,10 @@ const move_player = function(player, pawn, roll) {
     if (pawn_locations[player * 4 + pawn] + roll > boardLocations.length-2) 
         pawn_locations[player * 4 + pawn] = 0;
     else 
-    pawn_locations[player * 4 + pawn] = pawn_locations[player * 4 + pawn] + roll;
+        pawn_locations[player * 4 + pawn] = pawn_locations[player * 4 + pawn] + roll;
     
     //console.log(`Moving player[${player}] '${roll}' spaces, pawn[${pawn}] to [${pawn_locations[player * 4 + pawn]}]`);
-    checkCollision(player * 4 + pawn);
+    //checkCollision(player * 4 + pawn);
 
     positionElement(
         pawn_objects[player * 4 + pawn], 
