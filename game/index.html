@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/game.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
-    <link rel="icon" type="image/x-icon" href="/img/LOGO.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <script defer src="/js/navbar.js"></script>
 
     <script defer src="../js/darkmode.js"></script>
@@ -20,6 +20,10 @@
 
 </head>
 <body>
+    <ul class="skip-links">
+        <li><a href="#main">Skip naar main</a></li>
+        <li><a href="#footer">Skip to footer</a></li>
+    </ul>
     <header>
         <div class="flex">
             <a href="/home/">
@@ -32,7 +36,6 @@
                 <span>Menu</span>
             </button>
         </div>
-        <button id="theme-switcher">Switch themes!</button>
         <nav class="navbar">
             <ul class="nav_links">
                 <li><a href="../home/">Home</a></li>
@@ -232,5 +235,17 @@
 
         </section>
     </main>
+    <footer id="footer">
+        <div class="footer-content">
+            <h3>Ludo <span>King</span></h3>
+            <p>copyright <span>&copy; 2022</span> Team 16 designed by <span>Team 16</span></p>
+            <ul class="socials">
+                <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+            </ul>
+            <button id="theme-switcher">Switch themes!</button>
+        </div>
+    </footer>
 </body>
 </html>
