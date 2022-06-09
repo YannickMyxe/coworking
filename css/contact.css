@@ -27,6 +27,7 @@ button {
 
 #theme-switcher {
     width: 22%;
+    border-radius: 25px;
 }
 
 #menu {
