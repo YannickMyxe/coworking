@@ -159,19 +159,28 @@ const boardLocations = [
     document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(1)").getBoundingClientRect(),
     document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(7)").getBoundingClientRect(),
     document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(4)").getBoundingClientRect(),
-
 ]
 
+const board_starts = [42, 3, 16, 29];
+
 const positionElement = function (el, x, y) {
-    el.style.position = 'fixed';
-    el.style.left = x + 5 + 'px';
-    el.style.top =  y + 5 + 'px';
+    el.style.position = 'absolute';
+    el.style.left = x + 5 - board.x+ 'px';
+    el.style.top =  y + 5 - board.y+ 'px';
 };
 
 const doALoopForMe = async function() {
     const sleep = ms => new Promise(r => setTimeout(r, ms));
     for (let index = 0; index < boardLocations.length; index++) {
         await sleep(200);
-        positionElement(r1, boardLocations[index].x, boardLocations[index].y);
+        let location;
+        if (index + board_starts[0] > boardLocations.length-1) location = index - boardLocations.length;
+        else location = index;
+        positionElement(g1, boardLocations[location + board_starts[0]].x, boardLocations[location + board_starts[0]].y);
     }
 }();
+
+positionElement(y1, boardLocations[board_starts[1]].x, boardLocations[board_starts[1]].y)
+positionElement(g1, boardLocations[board_starts[0]].x, boardLocations[board_starts[0]].y)
+positionElement(r1, boardLocations[board_starts[2]].x, boardLocations[board_starts[2]].y)
+positionElement(b1, boardLocations[board_starts[3]].x, boardLocations[board_starts[3]].y)
