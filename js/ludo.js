@@ -107,30 +107,34 @@ const board = {
 }
 console.log(board)
 const boardLocations = [
-    {x: 170, y: 205},
-    {x: 203, y: 205},
-    {x: 236, y: 205},
-    {x: 269, y: 205},
-    {x: 302, y: 205},
-    {x: 335, y: 205},
-    {x: 368, y: 170},
-    {x: 368, y: 138},
-    {x: 368, y: 105},
-    {x: 368, y: 70},
-    {x: 368, y: 40},
-    {x: 368, y: 5},
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(3)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(6)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(9)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(3)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(6)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(9)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(1) > div:nth-child(1)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(1) > div:nth-child(2)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(1) > div:nth-child(3)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(1)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(2)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(3)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(6)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(9)").getBoundingClientRect(),
 ]
 
 const positionElement = function (el, x, y) {
-    el.style.position = 'absolute';
-    el.style.left = board.x + x + 'px';
-    el.style.top = board.y + y + 'px';
+    el.style.position = 'fixed';
+    el.style.left = x + 5 + 'px';
+    el.style.top =  y + 5 + 'px';
 };
 
 const doALoopForMe = async function() {
     const sleep = ms => new Promise(r => setTimeout(r, ms));
     for (let index = 0; index < boardLocations.length; index++) {
-        await sleep(500);
+        await sleep(300);
         positionElement(r1, boardLocations[index].x, boardLocations[index].y);
     }
 }();
