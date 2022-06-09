@@ -174,6 +174,72 @@ dice.addEventListener('click', () => {
     }
 })
 
+const selectOtherPawnAndPosition = function () {
+    g1.addEventListener('click', () => {
+        move_player(0, 0, 0);
+    })
+
+    g2.addEventListener('click', () => {
+        move_player(0, 1, 0);
+    })
+
+    g3.addEventListener('click', () => {
+        move_player(0, 2, 0);
+    })
+
+    g4.addEventListener('click', () => {
+        move_player(0, 3, 0);
+    })
+
+    y1.addEventListener('click', () => {
+        move_player(1, 0, 0);
+    })
+
+    y2.addEventListener('click', () => {
+        move_player(1, 1, 0);
+    })
+
+    y3.addEventListener('click', () => {
+        move_player(1, 2, 0);
+    })
+
+    y4.addEventListener('click', () => {
+        move_player(1, 3, 0);
+    })
+
+    r1.addEventListener('click', () => {
+        move_player(3, 0, 0);
+    })
+
+    r2.addEventListener('click', () => {
+        move_player(3, 1, 0);
+    })
+
+    r3.addEventListener('click', () => {
+        move_player(3, 2, 0);
+    })
+
+    r4.addEventListener('click', () => {
+        move_player(3, 3, 0);
+    })
+
+    b1.addEventListener('click', () => {
+        move_player(2, 0, 0);
+    })
+
+    b2.addEventListener('click', () => {
+        move_player(2, 1, 0);
+    })
+
+    b3.addEventListener('click', () => {
+        move_player(2, 2, 0);
+    })
+
+    b4.addEventListener('click', () => {
+        move_player(2, 3, 0);
+    })
+}
+
 const board_element = document.querySelector(".game");
 
 const board = {
