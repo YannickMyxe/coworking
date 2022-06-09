@@ -256,6 +256,13 @@ button > a:hover {
   color: var(--black-theme-text);
 }
 
+.roll {
+  cursor: pointer;
+  margin-top: 2rem;
+  font-size: 5rem;
+  color: var(--foreground);
+}
+
 
 /*    
   Navbar animations

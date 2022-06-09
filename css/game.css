@@ -417,12 +417,7 @@ input[type=color] {
     margin-top: 1rem;
 }
 
-.roll {
-    cursor: pointer;
-    margin-top: 2rem;
-    font-size: 5rem;
-    color: #0c0c0c;
-}
+
 
 .game > .turn-message {
     width: 100%;
