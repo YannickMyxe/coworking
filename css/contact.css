@@ -1,0 +1,87 @@
+:root{
+    --error-color: rgb(200,0,0);
+    --validation-color: rgb(0,200,0);
+    --button-color: rgb(27,160,137);
+    --button-hover-color: rgb(255,255,255);
+    --border-radius: 10px;
+}
+
+#form{
+    width: 400px;
+    margin: 0 auto 0 auto;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 24px;
+}
+
+button {
+    border: 0;
+    width: 95%;
+    background-color: var(--button-color);
+    border-radius: var(--border-radius);
+    color: #ffff;
+    font-weight: 600;
+    padding: 4% 8%;
+    cursor: pointer; 
+}
+
+button:hover {
+    background-color: var(--button-hover-color);
+    color: #1ba089;
+}
+
+abbr{
+    color: var(--error-color);
+}
+
+.input-control{
+    display: flex;
+    flex-direction: column;
+}
+
+.input-control input, textarea{
+    border: 2px solid #534f4f;
+	border-radius: 4px;
+	display: block;
+	font-size: 15px;
+	padding: 10px;
+	width: 100%;
+    resize: none;
+}
+
+.input-control input:focus {
+    outline: 0;
+}
+
+.input-control.success input{
+    border-color: var(--validation-color)
+}
+
+.input-control.error input{
+    border-color: var(--error-color);
+}
+
+.input-control .error  {
+    color: var(--error-color);
+    font-size: 12px;
+    height: 13px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+
+@media (min-width: 500px) {
+    body{
+        margin: 2.5em;
+    }
+
+    button, input, label, legend {
+        font-size: 1.2em;
+    }
+
+    h1 {
+        font-size: 3em;
+        margin-bottom: 1.75em;
+    }
+    
+}
