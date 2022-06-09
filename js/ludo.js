@@ -107,9 +107,12 @@ dice.addEventListener('click', () => {
 
     if(turn === 1) {
         document.querySelector('.turn-message').innerHTML = `<p>Player 1's turn</p>`;
+        document.querySelector('.turn-message').innerHTML += `<p></p>`;
+
         if(gameTurnGreen === 1) {
             if(diceRoll !== 6) {
-                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+                document.querySelector('.turn-message').innerHTML = `<p>Player 1's turn</p>`;
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`;
             } else {
                 gameTurnGreen++;
                 return;
@@ -120,9 +123,12 @@ dice.addEventListener('click', () => {
         turn++;
     } else if(turn === 2) {
         document.querySelector('.turn-message').innerHTML = `<p>Player 2's turn</p>`;
+        document.querySelector('.turn-message').innerHTML += `<p></p>`;
+
         if(gameTurnYellow === 1) {
             if(diceRoll !== 6) {
-                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+                document.querySelector('.turn-message').innerHTML = `<p>Player 2's turn</p>`;
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`;
             } else {
                 gameTurnYellow++;
                 return;
@@ -133,9 +139,12 @@ dice.addEventListener('click', () => {
         turn++;
     } else if(turn === 3) {
         document.querySelector('.turn-message').innerHTML = `<p>Player 3's turn</p>`;
+        document.querySelector('.turn-message').innerHTML += `<p></p>`;
+
         if(gameTurnRed === 1) {
             if(diceRoll !== 6) {
-                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+                document.querySelector('.turn-message').innerHTML = `<p>Player 3's turn</p>`;
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`;
             } else {
                 gameTurnRed++;
                 return;
@@ -146,9 +155,12 @@ dice.addEventListener('click', () => {
         turn++;
     } else {
         document.querySelector('.turn-message').innerHTML = `<p>Player 4's turn</p>`;
+        document.querySelector('.turn-message').innerHTML += `<p></p>`;
+
         if(gameTurnBlue === 1) {
             if(diceRoll !== 6) {
-                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+                document.querySelector('.turn-message').innerHTML = `<p>Player 4's turn</p>`;
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`;
             } else {
                 gameTurnBlue++;
                 return;
