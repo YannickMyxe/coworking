@@ -3,6 +3,7 @@ const aantalPionen = 4;
 const pionnen = [];
 let turns = 0;
 let steps = 0;
+const clickSound = new Audio('https://cdn.pixabay.com/download/audio/2022/03/10/audio_63c49c13c8.mp3?filename=button-pressed-38129.mp3');
 
 const colors = [
     "green-color",
@@ -85,7 +86,7 @@ let gameTurnYellow = 1;
 let gameTurnRed = 1;
 let gameTurnBlue = 1;
 dice.addEventListener('click', () => {
-    winner();
+    clickSound.play();
     let diceRoll = Math.floor(Math.random() * 6) + 1;
 
     if(diceRoll === 1) {
