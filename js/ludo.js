@@ -263,6 +263,23 @@ const checkCollision = function(pawn) {
                 if (pawn_locations[index] !== board_starts[Math.floor(index / 4)]) {
                     console.warn(`found match, setting pawn #${index} (player ${Math.floor(index / 4)} :: ${index % 4}) to loation ${board_starts[Math.floor(index / 4)]}`)
                     pawn_locations[index] = board_starts[Math.floor(index / 4)];
+
+                    let player = Math.floor(index / 4);
+                    
+                    if (player === 0) {
+                        gameTurnGreen--;
+                    } else if (player === 1) {
+                        gameTurnYellow--;
+                    } else if (player === 2) {
+                        gameTurnBlue--;
+                    } else if (player === 3) {
+                        gameTurnRed--;
+                    } else {
+                        console.error(`Player ${player} out of bounds?!`)
+                    }
+
+
+                    return true;
                 }
                 else {
                     console.warn(`Cannot collide with a home square`);
@@ -288,6 +305,7 @@ const move_player = function(player, pawn, roll) {
     
     //console.log(`Moving player[${player}] '${roll}' spaces, pawn[${pawn}] to [${pawn_locations[player * 4 + pawn]}]`);
     checkCollision(player * 4 + pawn);
+
     positionElement(
         pawn_objects[player * 4 + pawn], 
         boardLocations[pawn_locations[player* 4 + pawn]].x, 
