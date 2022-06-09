@@ -168,7 +168,7 @@ const board = {
     width: board_element.getBoundingClientRect().width,
     height: board_element.getBoundingClientRect().height,
 }
-console.log(board)
+
 const boardLocations = [
     document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(1)").getBoundingClientRect(),
     document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").getBoundingClientRect(),
