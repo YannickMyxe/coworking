@@ -115,7 +115,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(0, 0);
+            move_player(0, 0, diceRoll);
         }
         turn++;
     } else if(turn === 2) {
@@ -128,7 +128,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(1, 0);
+            move_player(1, 0, diceRoll);
         }
         turn++;
     } else if(turn === 3) {
@@ -141,7 +141,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(2, 0);
+            move_player(2, 0, diceRoll);
         }
         turn++;
     } else {
@@ -154,7 +154,7 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(3, 0);
+            move_player(3, 0, diceRoll);
         }
         turn = 1;
     }
@@ -234,11 +234,11 @@ const positionElement = function (el, x, y) {
     el.style.top =  y + 5 - board.y + 'px';
 };
 
-const move_player = function(player, pawn) {
-    if (pawn_locations[player] > boardLocations.length-2) 
+const move_player = function(player, pawn, roll) {
+    if (pawn_locations[player] + roll > boardLocations.length-2) 
         pawn_locations[player] = 0;
     else 
-    pawn_locations[player] = pawn_locations[player] + 1;
+    pawn_locations[player] = pawn_locations[player] + roll;
     
     //console.log(`Moving player[${player}], pawn[${pawn}] to [${pawn_locations[player]}]`);
     positionElement(
