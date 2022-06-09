@@ -70,6 +70,12 @@ let b4 = pawn_space.children[15];
 
 // g1.square.getBoundingClientRect().x = 150;
 
+const green_pawns = [g1, g2, g3, g4];
+const yellow_pawns = [y1, y2, y3, y4];
+const blue_pawns = [b1, b2, b3, b4];
+const red_pawns = [r1, r2, r3, r4];
+
+const pawn_objects = green_pawns.concat(yellow_pawns).concat(blue_pawns).concat(red_pawns);
 
 let dice = document.querySelector(".dice");
 let roll = document.querySelector(".roll");
@@ -162,31 +168,38 @@ const boardLocations = [
 ]
 
 const board_starts = [42, 3, 16, 29];
+const pawn_locations = board_starts;
 
 const positionElement = function (el, x, y) {
+    if (!el.style) return;
     el.style.position = 'absolute';
-    el.style.left = x + 5 - board.x+ 'px';
-    el.style.top =  y + 5 - board.y+ 'px';
+    el.style.left = x + 5 - board.x + 'px';
+    el.style.top =  y + 5 - board.y + 'px';
 };
+
+const move_player = function(player, pawn) {
+    if (pawn_locations[player] > boardLocations.length-2) 
+        pawn_locations[player] = 0;
+    else 
+    pawn_locations[player] = pawn_locations[player] + 1;
+    
+    //console.log(`Moving player[${player}], pawn[${pawn}] to [${pawn_locations[player]}]`);
+    positionElement(
+        pawn_objects[player * 4 + pawn], 
+        boardLocations[pawn_locations[player]].x, 
+        boardLocations[pawn_locations[player]].y);
+};
+
+console.log("Pawn array", pawn_objects);
+console.log(pawn_objects[2]);
 
 const doALoopForMe = async function() {
     const sleep = ms => new Promise(r => setTimeout(r, ms));
     for (let index = 0; index < boardLocations.length; index++) {
-        await sleep(200);
-        let location;
-        if (index + board_starts[3] > boardLocations.length-1) 
-            location = index - boardLocations.length;
-        else location = index;
-            positionElement(r1, boardLocations[location + board_starts[3]].x, boardLocations[location + board_starts[3]].y);
+        await sleep(100);
+        move_player(3, 0);
     }
 }();
-
-positionElement(y1, boardLocations[board_starts[1]].x, boardLocations[board_starts[1]].y)
-positionElement(g1, boardLocations[board_starts[0]].x, boardLocations[board_starts[0]].y)
-positionElement(r1, boardLocations[board_starts[2]].x, boardLocations[board_starts[2]].y)
-positionElement(b1, boardLocations[board_starts[3]].x, boardLocations[board_starts[3]].y)
-
-
 
 const greenSquare1 = document.querySelector('.square_green:nth-child(1)');
 const greenSquare2 = document.querySelector('.square_green:nth-child(2)');
