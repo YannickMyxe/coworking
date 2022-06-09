@@ -35,30 +35,24 @@
     <main>
         <section class="form">
             <h1>Contact form</h1>
-            <form action="#">
-                <div>
-                    <label for="naam">Naam :
-                    <abbr title="Verplicht in te vullen veld" class="required">*</abbr></label>
-                    <input type="text" name="naam" id="naam" autocomplete="name" placeholder="Ludo Thegame" required>
-                    <div id="naam-valid" class="inputDescription">error</div>
-                </div>
-
-                <div>
-                    <label for="email">E-mail :
-                        <abbr title="Verplicht in te vullen veld" class="required">*</abbr>    
+            <form id="form" novalidate>
+                <div class="input-control">
+                    <label for="naam">Naam<abbr class="required">*</abbr>
                     </label>
-                    <input type="text" name="email" id="email" autocomplete="email" placeholder="vb. ludothegame@email.com" required >
-                    <div id="email-valid" class="inputDescription">error</div>
+                    <input id="naam" name="naam" type="text" autocomplete="name" placeholder="Voornaam Achternaam">
+                    <div class="error"></div>
                 </div>
-            
-                <div class="message">
-                    <label for="message">Bericht :</label>
-                    <textarea id="w3review" name="w3review" rows="4" cols="50" placeholder="I love this game it's the best !"></textarea>
+                <div class="input-control">
+                    <label for="email">Email<abbr class="required">*</abbr></label>
+                    <input id="email" name="email" type="text" autocomplete="email" placeholder="VoornaamAchternaam@mail.com">
+                    <div class="error"></div>
                 </div>
-
-                <div>
-                    <button type="submit">Verzend</button>
+                <div class="input-control">
+                    <label for="bericht">Bericht<abbr class="required">*</abbr></label>
+                    <textarea rows="5" cols="50" id="bericht" name="bericht" type="text" placeholder="Typ hier je bericht"></textarea>
+                    <div class="error"></div>
                 </div>
+                <button type="submit">Send it !</button>
             </form>
         </section>
     </main>
