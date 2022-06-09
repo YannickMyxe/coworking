@@ -120,7 +120,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(0, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionGreen();
+                move_player(0, 0, diceRoll);
+            } else {
+                move_player(0, 0, diceRoll);
+            }
         }
         turn++;
     } else if(turn === 2) {
@@ -136,7 +141,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(1, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionYellow();
+                move_player(1, 0, diceRoll);
+            } else {
+                move_player(1, 0, diceRoll);
+            }
         }
         turn++;
     } else if(turn === 3) {
@@ -152,7 +162,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(2, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionRed();
+                move_player(2, 0, diceRoll);
+            } else {
+                move_player(2, 0, diceRoll);
+            }
         }
         turn++;
     } else {
@@ -168,7 +183,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(3, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionBlue();
+                move_player(3, 0, diceRoll);
+            } else {
+                move_player(3, 0, diceRoll);
+            }
         }
         turn = 1;
     }
