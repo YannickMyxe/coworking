@@ -96,3 +96,41 @@ dice.addEventListener('click', () => {
 
     
 })
+
+const board_element = document.querySelector(".game");
+
+const board = {
+    x: board_element.getBoundingClientRect().x,
+    y: board_element.getBoundingClientRect().y,
+    width: board_element.getBoundingClientRect().width,
+    height: board_element.getBoundingClientRect().height,
+}
+console.log(board)
+const boardLocations = [
+    {x: 170, y: 205},
+    {x: 203, y: 205},
+    {x: 236, y: 205},
+    {x: 269, y: 205},
+    {x: 302, y: 205},
+    {x: 335, y: 205},
+    {x: 368, y: 170},
+    {x: 368, y: 138},
+    {x: 368, y: 105},
+    {x: 368, y: 70},
+    {x: 368, y: 40},
+    {x: 368, y: 5},
+]
+
+const positionElement = function (el, x, y) {
+    el.style.position = 'absolute';
+    el.style.left = board.x + x + 'px';
+    el.style.top = board.y + y + 'px';
+};
+
+const doALoopForMe = async function() {
+    const sleep = ms => new Promise(r => setTimeout(r, ms));
+    for (let index = 0; index < boardLocations.length; index++) {
+        await sleep(500);
+        positionElement(r1, boardLocations[index].x, boardLocations[index].y);
+    }
+}();
