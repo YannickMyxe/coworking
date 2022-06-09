@@ -59,10 +59,107 @@
 }
 
 .game {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
     margin: 0 auto;
+}
+
+.green-pawn:nth-child(1) {
+    position: absolute;
+    top: 3.20rem;
+    left: 24.47rem;
+}
+
+.green-pawn:nth-child(2) {
+    position: absolute;
+    top: 3.20rem;
+    left: 27.8rem;
+}
+
+.green-pawn:nth-child(3) {
+    position: absolute;
+    top: 6.5rem;
+    left: 24.47rem;
+}
+
+.green-pawn:nth-child(4) {
+    position: absolute;
+    top: 6.5rem;
+    left: 27.8rem;
+}
+
+.yellow-pawn:nth-child(5) {
+    position: absolute;
+    top: 3.20rem;
+    right: 24.47rem;
+}
+
+.yellow-pawn:nth-child(6) {
+    position: absolute;
+    top: 3.20rem;
+    right: 27.8rem;
+}
+
+.yellow-pawn:nth-child(7) {
+    position: absolute;
+    top: 6.5rem;
+    right: 24.47rem;
+}
+
+.yellow-pawn:nth-child(8) {
+    position: absolute;
+    top: 6.5rem;
+    right: 27.8rem;
+}
+
+.red-pawn:nth-child(9) {
+    position: absolute;
+    top: 19.9rem;
+    left: 24.47rem;
+}
+
+.red-pawn:nth-child(10) {
+    position: absolute;
+    top: 19.9rem;
+    left: 27.8rem;
+}
+
+.red-pawn:nth-child(11) {
+    position: absolute;
+    top: 23.2rem;
+    left: 24.47rem;
+}
+
+.red-pawn:nth-child(12) {
+    position: absolute;
+    top: 23.2rem;
+    left: 27.8rem;
+}
+
+.blue-pawn:nth-child(13) {
+    position: absolute;
+    top: 19.9rem;
+    right: 24.47rem;
+}
+
+.blue-pawn:nth-child(14) {
+    position: absolute;
+    top: 19.9rem;
+    right: 27.8rem;
+}
+
+.blue-pawn:nth-child(15) {
+    position: absolute;
+    top: 23.2rem;
+    right: 24.47rem;
+}
+
+.blue-pawn:nth-child(16) {
+    position: absolute;
+    top: 23.2rem;
+    right: 27.8rem;
 }
 
 .game>div {
@@ -244,11 +341,6 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-.messages > p {
-    font-size: 3rem;
-    color: #c4c4c4;
-}
-
 
 /*
 
@@ -291,18 +383,13 @@ input[type=color] {
     flex-wrap: wrap;
 }
 
-div:nth-child(0) {
-    border: 5px solid #e5f50f;
-}
-
 .pawn-space > div {
     z-index: 500;
-    width: 40px;
-    height: 40px;
+    width: 25px;
+    height: 25px;
     outline: 1px solid #000;
     border-radius: 25px;
-    top: 0;
-    right: 0;
+    box-shadow: 0 0 .12rem .1rem #000;
 }
 
 .green-pawn {
