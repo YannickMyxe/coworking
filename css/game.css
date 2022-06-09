@@ -59,7 +59,6 @@
 }
 
 .game {
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -245,7 +244,10 @@
     grid-template-columns: 1fr 1fr 1fr;
 }
 
-
+.messages > p {
+    font-size: 3rem;
+    color: #c4c4c4;
+}
 
 
 /*
@@ -282,40 +284,38 @@ input[type=color] {
     margin-bottom: 1rem;
 }
 
-.pawn-space {
+.game > .pawn-space {
     max-width: 70%;
-    position: absolute;
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
 }
 
-.game > .pawn-space {
-    border: 3px solid #aae;
+div:nth-child(0) {
+    border: 5px solid #e5f50f;
 }
 
-.pawn-space:nth-child(0) {
-    border: 1px solid #fe25c5;
-}
-
-svg {
+.pawn-space > div {
     z-index: 500;
-    width: 50px;
+    width: 40px;
+    height: 40px;
+    outline: 1px solid #000;
+    border-radius: 25px;
     top: 0;
     right: 0;
 }
 
-.green-pawn path, .green-pawn polygon {
-    fill: var(--green-color);
+.green-pawn {
+    background-color: var(--green-color);
 }
-.yellow-pawn path, .yellow-pawn polygon {
-    fill: var(--yellow-color);
+.yellow-pawn {
+    background-color: var(--yellow-color);
 }
-.blue-pawn path, .blue-pawn polygon {
-    fill: var(--blue-color);
+.blue-pawn {
+    background-color: var(--blue-color);
 }
-.red-pawn path, .red-pawn polygon {
-    fill: var(--red-color);
+.red-pawn {
+    background-color: var(--red-color);
 }
 
 .dice_roll {
