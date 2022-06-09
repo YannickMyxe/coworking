@@ -74,6 +74,10 @@ let b4 = pawn_space.children[15];
 let dice = document.querySelector(".dice");
 let roll = document.querySelector(".roll");
 let turn = 1;
+let gameTurnGreen = 1;
+let gameTurnYellow = 1;
+let gameTurnRed = 1;
+let gameTurnBlue = 1;
 dice.addEventListener('click', () => {
     let diceRoll = Math.floor(Math.random() * 6) + 1;
 
@@ -96,20 +100,58 @@ dice.addEventListener('click', () => {
     }
 
     if(turn === 1) {
-        console.log("Player 1's turn");
+        document.querySelector('.turn-message').innerHTML = `<p>Player 1's turn</p>`;
+        if(gameTurnGreen === 1) {
+            if(diceRoll !== 6) {
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+            } else {
+                gameTurnGreen++;
+                return;
+            }
+        } else {
+            //Code om te verplaatsen
+        }
         turn++;
     } else if(turn === 2) {
-        console.log("Player 2's turn");
+        document.querySelector('.turn-message').innerHTML = `<p>Player 2's turn</p>`;
+        if(gameTurnYellow === 1) {
+            if(diceRoll !== 6) {
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+            } else {
+                gameTurnYellow++;
+                return;
+            }
+        } else {
+            //Code om te verplaatsen
+        }
         turn++;
     } else if(turn === 3) {
-        console.log("Player 3's turn");
+        document.querySelector('.turn-message').innerHTML = `<p>Player 3's turn</p>`;
+        if(gameTurnRed === 1) {
+            if(diceRoll !== 6) {
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+            } else {
+                gameTurnRed++;
+                return;
+            }
+        } else {
+            //Code om te verplaatsen
+        }
         turn++;
     } else {
-        console.log("Player 4's turn");
+        document.querySelector('.turn-message').innerHTML = `<p>Player 4's turn</p>`;
+        if(gameTurnBlue === 1) {
+            if(diceRoll !== 6) {
+                document.querySelector('.turn-message').innerHTML += `<p>Sorry but you're stuck</p>`
+            } else {
+                gameTurnBlue++;
+                return;
+            }
+        } else {
+            //Code om te verplaatsen
+        }
         turn = 1;
     }
-
-    
 })
 
 const board_element = document.querySelector(".game");

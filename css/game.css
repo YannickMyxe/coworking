@@ -422,3 +422,10 @@ input[type=color] {
     font-size: 5rem;
     color: #0c0c0c;
 }
+
+.game > .turn-message {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
