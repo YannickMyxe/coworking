@@ -94,7 +94,7 @@ dice.addEventListener('click', () => {
         roll.innerHTML = ("⚅");
     }
 
-    
+
 })
 
 const board_element = document.querySelector(".game");
@@ -184,3 +184,140 @@ positionElement(y1, boardLocations[board_starts[1]].x, boardLocations[board_star
 positionElement(g1, boardLocations[board_starts[0]].x, boardLocations[board_starts[0]].y)
 positionElement(r1, boardLocations[board_starts[2]].x, boardLocations[board_starts[2]].y)
 positionElement(b1, boardLocations[board_starts[3]].x, boardLocations[board_starts[3]].y)
+
+
+
+const greenSquare1 = document.querySelector('.square_green:nth-child(1)');
+
+const locatieGreenSquare1 = {
+    x: greenSquare1.getBoundingClientRect().x,
+    y: greenSquare1.getBoundingClientRect().y,
+}
+console.log("Locaties houses green");
+console.log(locatieGreenSquare1);
+
+const greenSquare2 = document.querySelector('.square_green:nth-child(2)');
+
+const locatieGreenSquare2 = {
+    x: greenSquare2.getBoundingClientRect().x,
+    y: greenSquare2.getBoundingClientRect().y,
+}
+console.log(locatieGreenSquare2);
+
+const greenSquare3 = document.querySelector('.square_green:nth-child(3)');
+
+const locatieGreenSquare3 = {
+    x: greenSquare3.getBoundingClientRect().x,
+    y: greenSquare3.getBoundingClientRect().y,
+}
+console.log(locatieGreenSquare3);
+
+const greenSquare4 = document.querySelector('.square_green:nth-child(4)');
+
+const locatieGreenSquare4 = {
+    x: greenSquare4.getBoundingClientRect().x,
+    y: greenSquare4.getBoundingClientRect().y,
+}
+console.log(locatieGreenSquare4);
+
+console.log("Locaties houses yellow");
+
+const yellowSquare1 = document.querySelector('.square_yellow:nth-child(1)');
+
+const locatieYellowSquare1 = {
+    x: yellowSquare1.getBoundingClientRect().x,
+    y: yellowSquare1.getBoundingClientRect().y,
+}
+console.log(locatieYellowSquare1);
+
+const yellowSquare2 = document.querySelector('.square_yellow:nth-child(2)');
+
+const locatieYellowSquare2 = {
+    x: yellowSquare2.getBoundingClientRect().x,
+    y: yellowSquare2.getBoundingClientRect().y,
+}
+console.log(locatieYellowSquare2);
+
+const yellowSquare3 = document.querySelector('.square_yellow:nth-child(3)');
+
+const locatieYellowSquare3 = {
+    x: yellowSquare3.getBoundingClientRect().x,
+    y: yellowSquare3.getBoundingClientRect().y,
+}
+console.log(locatieYellowSquare3);
+
+const yellowSquare4 = document.querySelector('.square_yellow:nth-child(4)');
+
+const locatieYellowSquare4 = {
+    x: yellowSquare4.getBoundingClientRect().x,
+    y: yellowSquare4.getBoundingClientRect().y,
+}
+console.log(locatieYellowSquare4);
+
+console.log("Locaties houses red");
+
+const redSquare1 = document.querySelector('.square_red:nth-child(1)');
+
+const locatieRedSquare1 = {
+    x: redSquare1.getBoundingClientRect().x,
+    y: redSquare1.getBoundingClientRect().y,
+}
+console.log(locatieRedSquare1);
+
+const redSquare2 = document.querySelector('.square_red:nth-child(2)');
+
+const locatieRedSquare2 = {
+    x: redSquare2.getBoundingClientRect().x,
+    y: redSquare2.getBoundingClientRect().y,
+}
+console.log(locatieRedSquare2);
+
+const redSquare3 = document.querySelector('.square_red:nth-child(3)');
+
+const locatieRedSquare3 = {
+    x: redSquare3.getBoundingClientRect().x,
+    y: redSquare3.getBoundingClientRect().y,
+}
+console.log(locatieRedSquare3);
+
+const redSquare4 = document.querySelector('.square_red:nth-child(4)');
+
+const locatieRedSquare4 = {
+    x: redSquare4.getBoundingClientRect().x,
+    y: redSquare4.getBoundingClientRect().y,
+}
+console.log(locatieRedSquare4);
+
+console.log("Locaties houses blue");
+
+const blueSquare1 = document.querySelector('.square_blue:nth-child(1)');
+
+const locatieBlueSquare1 = {
+    x: blueSquare1.getBoundingClientRect().x,
+    y: blueSquare1.getBoundingClientRect().y,
+}
+console.log(locatieBlueSquare1);
+
+const blueSquare2 = document.querySelector('.square_blue:nth-child(2)');
+
+const locatieBlueSquare2 = {
+    x: blueSquare2.getBoundingClientRect().x,
+    y: blueSquare2.getBoundingClientRect().y,
+}
+console.log(locatieBlueSquare2);
+
+const blueSquare3 = document.querySelector('.square_blue:nth-child(3)');
+
+const locatieBlueSquare3 = {
+    x: blueSquare3.getBoundingClientRect().x,
+    y: blueSquare3.getBoundingClientRect().y,
+}
+console.log(locatieBlueSquare3);
+
+const blueSquare4 = document.querySelector('.square_blue:nth-child(4)');
+
+const locatieBlueSquare4 = {
+    x: blueSquare4.getBoundingClientRect().x,
+    y: blueSquare4.getBoundingClientRect().y,
+}
+console.log(locatieBlueSquare4);
