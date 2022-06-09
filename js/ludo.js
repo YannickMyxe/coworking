@@ -85,6 +85,7 @@ let gameTurnYellow = 1;
 let gameTurnRed = 1;
 let gameTurnBlue = 1;
 dice.addEventListener('click', () => {
+    winner();
     let diceRoll = Math.floor(Math.random() * 6) + 1;
 
     if(diceRoll === 1) {
@@ -264,6 +265,13 @@ const checkIfOnTopOfOtherPlayer = function(pawn) {
     return index;
 }
 
+const winner = function() {
+    document.querySelector('.turn-message').innerHTML = `<p>We have a winner!!!</p>`;
+    document.querySelector('.turn-message > p').style.color = "#15b02c";
+
+    let audio = new Audio('http://soundfxcenter.com/video-games/super-mario-bros/8d82b5_Super_Mario_Bros_Stage_Clear_Sound_Effect.mp3');
+    audio.play();
+}
 
 const move_player = function(player, pawn, roll) {
     if (pawn_locations[player * 4 + pawn] + roll > boardLocations.length-2) 
