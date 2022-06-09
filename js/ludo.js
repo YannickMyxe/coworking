@@ -85,6 +85,8 @@ let gameTurnGreen = 1;
 let gameTurnYellow = 1;
 let gameTurnRed = 1;
 let gameTurnBlue = 1;
+const active_pawn = [0, 0, 0, 0];
+
 dice.addEventListener('click', () => {
     clickSound.play();
     let diceRoll = Math.floor(Math.random() * 6) + 1;
@@ -122,9 +124,9 @@ dice.addEventListener('click', () => {
         } else {
             if(diceRoll === 6) {
                 positionGreen();
-                move_player(0, 0, diceRoll);
+                move_player(0, active_pawn[0], diceRoll);
             } else {
-                move_player(0, 0, diceRoll);
+                move_player(0, active_pawn[0], diceRoll);
             }
         }
         turn++;
@@ -143,9 +145,9 @@ dice.addEventListener('click', () => {
         } else {
             if(diceRoll === 6) {
                 positionYellow();
-                move_player(1, 0, diceRoll);
+                move_player(1, active_pawn[1], diceRoll);
             } else {
-                move_player(1, 0, diceRoll);
+                move_player(1, active_pawn[1], diceRoll);
             }
         }
         turn++;
@@ -164,9 +166,9 @@ dice.addEventListener('click', () => {
         } else {
             if(diceRoll === 6) {
                 positionRed();
-                move_player(2, 0, diceRoll);
+                move_player(2, active_pawn[2], diceRoll);
             } else {
-                move_player(2, 0, diceRoll);
+                move_player(2, active_pawn[2], diceRoll);
             }
         }
         turn++;
@@ -185,9 +187,9 @@ dice.addEventListener('click', () => {
         } else {
             if(diceRoll === 6) {
                 positionBlue();
-                move_player(3, 0, diceRoll);
+                move_player(3, active_pawn[3], diceRoll);
             } else {
-                move_player(3, 0, diceRoll);
+                move_player(3, active_pawn[3], diceRoll);
             }
         }
         turn = 1;
@@ -352,8 +354,6 @@ const winnerLanes = [
     document.querySelector(".row_bottom > div:nth-child(2) > div:nth-child(2) > div:nth-child(5)").getBoundingClientRect(),
 ];
 
-
-
 const board_starts = [42, 3, 16, 29];
 const pawn_locations = [
     42, 42, 42, 42,
@@ -426,8 +426,13 @@ const move_Winner = function(player, pawn, roll) {
         winner_pos[player * 4 + pawn] = winner_pos[player * 4 + pawn] + roll;
         console.warn(`Setting winner pos to ${winner_pos[player * 4 + pawn]}`);
     }
-    if (winner_pos === 6) {
-        winner();
+    if (winner_pos[player * 4 + pawn] === 6) {
+        if (pawn < 3) {
+            active_pawn[player] = active_pawn[player] +1;
+            move_player(player, pawn + 1, 0);
+        }else {
+            winner();
+        }
     }
     positionElement(
         pawn_objects[player * 4 + pawn], 
@@ -439,7 +444,7 @@ const move_player = function(player, pawn, roll) {
 
     if (winner_pos[player * 4 + pawn]  ===  0 && pawn_locations[player * 4 + pawn] < board_starts[player] - 2 && pawn_locations[player * 4 + pawn] + roll >= board_starts[player] - 2) {
         
-        let stillToMove = pawn_locations[player * 4 + pawn] + roll - board_starts[player] + 2;
+        let stillToMove = pawn_locations[player * 4 + pawn] + roll - board_starts[player];
         pawn_locations[player * 4 + pawn] = board_starts[player] -1;
         console.warn(`${player}:${pawn} rolled ${roll}, Do not move, has to move ${stillToMove}`);
 
