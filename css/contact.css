@@ -25,6 +25,14 @@ button {
     cursor: pointer; 
 }
 
+#theme-switcher {
+    width: 22%;
+}
+
+#menu {
+    width: 10%;
+}
+
 button:hover {
     background-color: var(--button-hover-color);
     color: #1ba089;
