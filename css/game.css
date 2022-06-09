@@ -414,6 +414,7 @@ input[type=color] {
 
 .dice {
     width: 15rem;
+    margin-top: 1rem;
 }
 
 .roll {
@@ -425,6 +426,8 @@ input[type=color] {
 
 .game > .turn-message {
     width: 100%;
+    min-height: 5rem;
+    max-height: 5rem;
     display: flex;
     flex-direction: column;
     font-size: 1.5rem;
