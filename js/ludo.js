@@ -120,7 +120,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(0, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionGreen();
+                move_player(0, 0, diceRoll);
+            } else {
+                move_player(0, 0, diceRoll);
+            }
         }
         turn++;
     } else if(turn === 2) {
@@ -136,7 +141,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(1, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionYellow();
+                move_player(1, 0, diceRoll);
+            } else {
+                move_player(1, 0, diceRoll);
+            }
         }
         turn++;
     } else if(turn === 3) {
@@ -152,7 +162,12 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(2, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionRed();
+                move_player(2, 0, diceRoll);
+            } else {
+                move_player(2, 0, diceRoll);
+            }
         }
         turn++;
     } else {
@@ -168,13 +183,18 @@ dice.addEventListener('click', () => {
                 return;
             }
         } else {
-            move_player(3, 0, diceRoll);
+            if(diceRoll === 6) {
+                positionBlue();
+                move_player(3, 0, diceRoll);
+            } else {
+                move_player(3, 0, diceRoll);
+            }
         }
         turn = 1;
     }
 })
 
-const selectOtherPawnAndPosition = function () {
+const positionGreen = function () {
     g1.addEventListener('click', () => {
         move_player(0, 0, 0);
     })
@@ -190,7 +210,9 @@ const selectOtherPawnAndPosition = function () {
     g4.addEventListener('click', () => {
         move_player(0, 3, 0);
     })
+}
 
+const positionYellow = function() {
     y1.addEventListener('click', () => {
         move_player(1, 0, 0);
     })
@@ -206,23 +228,26 @@ const selectOtherPawnAndPosition = function () {
     y4.addEventListener('click', () => {
         move_player(1, 3, 0);
     })
-
+}
+const positionRed = function() {
     r1.addEventListener('click', () => {
         move_player(3, 0, 0);
     })
-
+    
     r2.addEventListener('click', () => {
         move_player(3, 1, 0);
     })
-
+    
     r3.addEventListener('click', () => {
         move_player(3, 2, 0);
     })
-
+    
     r4.addEventListener('click', () => {
         move_player(3, 3, 0);
     })
+}
 
+const positionBlue = function() {
     b1.addEventListener('click', () => {
         move_player(2, 0, 0);
     })
