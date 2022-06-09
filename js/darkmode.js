@@ -15,7 +15,7 @@
 
     const setColorText = function() {
       let currentTheme = document.documentElement.getAttribute("data-theme");
-      themeSwitcher.innerText = `Switch to ${currentTheme === "dark" ? "light" : "dark"} mode`;
+      themeSwitcher.innerHTML = `Switch to ${currentTheme === "dark" ? "<i class='fa-solid fa-sun'></i>" : "<i class='fa-solid fa-moon'></i>"} mode`;
     }
     const switchColor = function() {
       // Get the current selected theme, on the first run
