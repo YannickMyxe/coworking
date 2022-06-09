@@ -304,6 +304,31 @@ const boardLocations = [
     document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(4)").getBoundingClientRect(),
 ]
 
+const winnerLanes = [
+    document.querySelector(".left_part > div:nth-child(1) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".left_part > div:nth-child(1) > div:nth-child(6)").getBoundingClientRect(),
+    document.querySelector(".left_part > div:nth-child(2) > div:nth-child(4)").getBoundingClientRect(),
+    document.querySelector(".left_part > div:nth-child(2) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".left_part > div:nth-child(2) > div:nth-child(6)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(1) > div:nth-child(8)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".row_up > div:nth-child(2) > div:nth-child(2) > div:nth-child(8)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(1) > div:nth-child(4)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(1) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(1) > div:nth-child(6)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(4)").getBoundingClientRect(),
+    document.querySelector(".right_part > div:nth-child(2) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".row_bottom > div:nth-child(2) > div:nth-child(1) > div:nth-child(2)").getBoundingClientRect(),
+    document.querySelector(".row_bottom > div:nth-child(2) > div:nth-child(1) > div:nth-child(5)").getBoundingClientRect(),
+    document.querySelector(".row_bottom > div:nth-child(2) > div:nth-child(1) > div:nth-child(8)").getBoundingClientRect(),
+    document.querySelector(".row_bottom > div:nth-child(2) > div:nth-child(2) > div:nth-child(2)").getBoundingClientRect(),
+    document.querySelector(".row_bottom > div:nth-child(2) > div:nth-child(2) > div:nth-child(5)").getBoundingClientRect(),
+];
+
+
+
 const board_starts = [42, 3, 16, 29];
 const pawn_locations = [
     42, 42, 42, 42,
@@ -311,6 +336,13 @@ const pawn_locations = [
     16, 16, 16, 16,
     29, 29, 29, 29,
 ];
+
+const winner_pos = [
+    0, 0, 0, 0,
+    0, 0, 0, 0,
+    0, 0, 0, 0,
+    0, 0, 0, 0,
+]
 
 const positionElement = function (el, x, y) {
     if (!el.style) return;
@@ -364,12 +396,45 @@ const winner = function() {
     audio.play();
 }
 
+const move_Winner = function(player, pawn, roll) {
+    if (winner_pos[player * 4 + pawn] + roll <= 6) {
+        winner_pos[player * 4 + pawn] = winner_pos[player * 4 + pawn] + roll;
+        console.warn(`Setting winner pos to ${winner_pos[player * 4 + pawn]}`);
+    }
+    if (winner_pos === 6) {
+        winner();
+    }
+    positionElement(
+        pawn_objects[player * 4 + pawn], 
+        winnerLanes[player * 5 + pawn].x, 
+        winnerLanes[player * 5 + pawn].y);
+}
+
 const move_player = function(player, pawn, roll) {
+
+    if (winner_pos[player * 4 + pawn]  ===  0 && pawn_locations[player * 4 + pawn] < board_starts[player] - 2 && pawn_locations[player * 4 + pawn] + roll >= board_starts[player] - 2) {
+        
+        let stillToMove = pawn_locations[player * 4 + pawn] + roll - board_starts[player] + 2;
+        pawn_locations[player * 4 + pawn] = board_starts[player] -1;
+        console.warn(`${player}:${pawn} rolled ${roll}, Do not move, has to move ${stillToMove}`);
+
+        move_Winner(player, pawn, stillToMove);
+
+        return;
+    }
+    if (winner_pos[player *4 + pawn] !== 0) {
+    
+        move_Winner(player, pawn, roll);
+        return;
+    }
+
     if (pawn_locations[player * 4 + pawn] + roll > boardLocations.length-2) 
         pawn_locations[player * 4 + pawn] = 0;
     else 
         pawn_locations[player * 4 + pawn] = pawn_locations[player * 4 + pawn] + roll;
     
+
+
     //console.log(`Moving player[${player}] '${roll}' spaces, pawn[${pawn}] to [${pawn_locations[player * 4 + pawn]}]`);
     //checkCollision(player * 4 + pawn);
 
